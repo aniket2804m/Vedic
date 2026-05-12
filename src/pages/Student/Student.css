@@ -1,184 +1,409 @@
-/* CONTAINER */
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .student-container {
   width: 100%;
-  padding: 60px 5%;
+  padding: 80px 5%;
   text-align: center;
-  margin-top: -130px;
+  overflow: hidden;
 }
 
-.slide {
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* =========================
+   TITLE
+========================= */
 
-.slide iframe {
-  width: 100%;
-  max-width: 500px;
-  height: 280px;
-  border-radius: 15px;
-}
-
-/* TITLE */
 .student-title {
-  font-size: 32px;
-  margin-bottom: 40px;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #111;
 }
 
 .student-title span {
   color: #7b2cbf;
 }
 
-/* SLIDER WRAPPER */
-/* SLIDER WRAPPER */
+/* =========================
+   SLIDER WRAPPER
+========================= */
+
 .slider-wrapper {
-  overflow: hidden;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1300px;
   margin: auto;
+  overflow: hidden;
+  position: relative;
 }
 
-/* SLIDER */
+/* =========================
+   SLIDER
+========================= */
+
 .slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* EACH CARD */
+/* =========================
+   EACH SLIDE
+========================= */
+
 .slide {
-  min-width: 33.33%;   /* 👈 3 cards in one row */
-  padding: 10px;
+  min-width: 33.33%;
+  padding: 12px;
   box-sizing: border-box;
 }
 
-/* VIDEO CARD STYLE */
 .slide iframe {
   width: 100%;
-  height: 200px;
-  border-radius: 15px;
-  border: 3px solid #f4b400;  /* 👈 yellow border like image */
-  background: black;
+  height: 240px;
+  border-radius: 18px;
+  border: 4px solid #f4b400;
+  background: #000;
 }
 
-/* DOTS */
+/* =========================
+   DOTS
+========================= */
+
 .dots {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
+  width: 12px;
+  height: 12px;
   margin: 0 6px;
   background: #ccc;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .dot.active {
-  background: #000;
+  background: #7b2cbf;
+  transform: scale(1.2);
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
+.student-btn {
+  margin-top: 20px;
+}
+
 .student-btn button {
-  padding: 12px 30px;
+  padding: 14px 34px;
   border: none;
   background: linear-gradient(135deg, #7b2cbf, #9d4edd);
   color: white;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
+.student-btn button:hover {
+  transform: translateY(-3px);
+}
 
+/* =========================
+   HAPPY SECTION
+========================= */
 
-/* 🌍 CONTAINER */
 .happy-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 80px auto 0;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+
+  gap: 50px;
 
   padding: 50px;
-  border-radius: 20px;
+
+  border-radius: 28px;
 
   background: linear-gradient(135deg, #6a11cb, #241136);
+
   color: white;
 
-  margin: 60px 20%;
-  margin-left: 150px;
   overflow: hidden;
 }
 
+/* =========================
+   LEFT TEXT
+========================= */
 
-/* 📝 TEXT */
 .happy-text {
   flex: 1;
+  text-align: left;
 }
 
 .happy-text h2 {
-  font-size: 40px;
+  font-size: 52px;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .happy-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 500px;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #eee;
+  max-width: 550px;
 }
 
-/* 🔘 BUTTON GROUP */
+/* =========================
+   BUTTON GROUP
+========================= */
+
 .happy-btn {
-  margin-top: 30px;
+  margin-top: 35px;
+
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 40px;
+
+  position: relative;
+
+  background: #f3e5f5;
+
+  border-radius: 60px;
+
   overflow: hidden;
+
   width: fit-content;
 }
 
 /* LEFT BUTTON */
+
 .btn-primary {
-  padding: 14px 24px;
+  padding: 16px 34px;
+
   border: none;
-  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+
+  background: linear-gradient(90deg, #c2185b, #e91e63);
+
   color: white;
+
   cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  border-radius: 60px 0 0 60px;
 }
 
 /* RIGHT BUTTON */
+
 .btn-secondary {
-  padding: 14px 24px;
+  padding: 16px 34px;
+
   border: none;
-  background: transparent;
-  color: black;
+
+  background: white;
+
+  color: #111;
+
   cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  border-radius: 0 60px 60px 0;
 }
 
-/* OR TEXT */
+/* OR DIVIDER */
+
 .divider {
-  padding: 0 15px;
-  font-weight: 500;
-  color: #666;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 50px;
+  height: 50px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #444;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+  z-index: 10;
 }
 
-/* 🖼 IMAGE */
+/* =========================
+   RIGHT IMAGE
+========================= */
+
 .happy-image {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
 .happy-image img {
   width: 100%;
   max-width: 420px;
+  object-fit: contain;
 }
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+
+  .happy-text h2 {
+    font-size: 42px;
+  }
+
+  .slide iframe {
+    height: 220px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+  .student-title {
+    font-size: 34px;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .slide iframe {
+    height: 220px;
+  }
+
   .happy-container {
     flex-direction: column;
     text-align: center;
-    padding: 60px 5%;
+    padding: 40px 30px;
+  }
+
+  .happy-text {
+    text-align: center;
+  }
+
+  .happy-text p {
+    margin: auto;
+  }
+
+  .happy-btn {
+    margin: 30px auto 0;
+  }
+
+  .happy-text h2 {
+    font-size: 38px;
+  }
+
+  .happy-image img {
+    max-width: 340px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .student-container {
+    padding: 60px 15px;
+  }
+
+  .student-title {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+
+  .slide iframe {
+    height: 220px;
+  }
+
+  .happy-container {
+    padding: 30px 20px;
+    gap: 30px;
+    border-radius: 22px;
+  }
+
+  .happy-text h2 {
+    font-size: 32px;
+  }
+
+  .happy-text p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .happy-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    flex: 1;
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+
+  .divider {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+  }
+
+  .happy-image img {
+    max-width: 280px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .student-title {
+    font-size: 24px;
+  }
+
+  .slide iframe {
+    height: 200px;
+  }
+
+  .happy-container {
+    padding: 25px 16px;
   }
 
   .happy-text h2 {
@@ -189,83 +414,19 @@
     font-size: 14px;
   }
 
-  .happy-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e6d6ef;
-  border-radius: 40px;
-  overflow: hidden;
-  width: fit-content;
-  margin-top: 20px;
-  position: relative;
-}
+  .btn-primary,
+  .btn-secondary {
+    font-size: 11px;
+    padding: 12px 6px;
+  }
 
-/* LEFT BUTTON */
-.btn-primary {
-  background: linear-gradient(90deg, #c2185b, #e91e63);
-  color: white;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 40px 0 0 40px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* RIGHT BUTTON */
-.btn-secondary {
-  background: transparent;
-  color: #000;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 0 40px 40px 0;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* CENTER OR CIRCLE */
-.divider {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-  .happy-image {
-    text-align: center;
+  .divider {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
   }
 
   .happy-image img {
-    max-width: 300px;
-  }
-}
-
-/* 📱 TABLET */
-@media (max-width: 1024px) {
-  .happy-text h2 {
-    font-size: 32px;
-  }
-
-  .happy-container {
-    gap: 20px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .slide video {
-    width: 100%;
-  }
-
-  .student-title {
-    font-size: 24px;
+    max-width: 220px;
   }
 }
