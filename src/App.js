@@ -12,6 +12,9 @@ const Kp = lazy(() => import("./components/Kp/Kp"));
 const LalKitab = lazy(() => import("./components/LalKitab/LalKitab"));
 const Nakshatra = lazy(() => import("./components/Nakshatra/Nakshatra"));
 const Numerology = lazy(() => import("./components/Numerology/Numerology"));
+const Weekly = lazy(() => import("./components/Weekly/Weekly"));
+const Numero = lazy(() => import("./components/Numero/Numero"));
+const NameNumerology = lazy(() => import("./components/NameNumerology/NameNumerology"));
 
 // // Pages
 const Feature = lazy(() => import("./pages/Feature/Feature"));
@@ -61,6 +64,9 @@ function App() {
             <Route path="/vedic-numerology" element={<Numerology />} />
             <Route path="/kp-form" element={<KpForm />} />
             <Route path="/kp-feedback" element={<KpFeedback />} />
+            <Route path="/Weekly" element={<Weekly />} />
+            <Route path="/Numero" element={<Numero />} />
+            <Route path="/name-numerology" element={<NameNumerology />} />
           </Routes>
         </Suspense>
       </main>

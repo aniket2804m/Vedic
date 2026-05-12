@@ -145,13 +145,19 @@ function Navbar() {
             className={`mega-dropdown ${dropdown === "links" ? "show" : ""}`}
           >
             <div className="mega-grid">
-              <Link to="#" onClick={() => {
+              <Link to="/Weekly" onClick={() => {
                 setMenuOpen(false);
                 setDropdown(null);
               }}>
                 Weekly Horoscope
               </Link>
-              <Link to="#" onClick={() => {
+              <Link to="/Numero" onClick={() => {
+                setMenuOpen(false);
+                setDropdown(null);
+              }}>
+               Name Numerology Calculator
+              </Link>
+              <Link to="/name-numerology" onClick={() => {
                 setMenuOpen(false);
                 setDropdown(null);
               }}>
