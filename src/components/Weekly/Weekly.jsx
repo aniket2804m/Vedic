@@ -75,7 +75,7 @@ const Weekly = () => {
       {/* TOP */}
       <div className="course-top">
         <div className="heading">
-          <h1 className="week1">India's Leading Vedic Science Academy</h1>
+          <h1 className="week1">India's Leading Jiivaastro Academy</h1>
           <h1 className="week">
             Weekly <span> Horoscope</span>
           </h1>

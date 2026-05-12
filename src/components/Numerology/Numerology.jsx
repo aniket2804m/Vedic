@@ -23,7 +23,7 @@ const Numerology = () => {
               {/* LEFT */}
               <div className="home-left">
                 <h1>
-                 <span>Vedic Numerology Course</span> WithCertification
+                 <span>Jiivaastro Numerology Course</span> WithCertification
                 </h1>
       
                 <p>
@@ -36,14 +36,6 @@ const Numerology = () => {
       
                 <div className="students">
                   <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>
-      
-                  <div className="avatars">
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <div className="count">1 Lakh+</div>
-                  </div>
 
                    <button className="home-btn">
                      Get Course Details ↗

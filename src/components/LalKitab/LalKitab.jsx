@@ -36,14 +36,6 @@ const LalKitab = () => {
       
                 <div className="students">
                   <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>
-      
-                  <div className="avatars">
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <img src={img} alt="" />
-                    <div className="count">1 Lakh+</div>
-                  </div>
 
                    <button className="home-btn">
                      Get Course Details ↗

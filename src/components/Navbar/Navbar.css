@@ -16,7 +16,36 @@ body {
 
 /* LOGO */
 .logo img {
-  height: 45px;
+  height: 70px;
+  width: 150px;
+  margin-right: 40px;
+  object-fit: contain;
+
+  /* Animation */
+  animation: logoFloat 3s ease-in-out infinite;
+
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
+.logo img:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Floating Animation */
+@keyframes logoFloat {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* NAV LINKS */

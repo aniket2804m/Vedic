@@ -115,7 +115,7 @@ const Numero = () => {
             <h1>Numerology Calculator</h1>
 
             <p>
-              Powered by Academy of Vedic Vidya. Change details, then click
+              Powered by Academy of Jiivaastro. Change details, then click
               Calculate to refresh your numerology report.
             </p>
           </div>
@@ -171,7 +171,7 @@ const Numero = () => {
                 value={formData.system}
                 onChange={handleChange}
               >
-                <option>Chaldean Vedic/Classic</option>
+                <option>Chaldean Jiivaastro/Classic</option>
                 <option>Pythagorean</option>
               </select>
             </div>

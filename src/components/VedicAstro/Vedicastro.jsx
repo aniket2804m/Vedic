@@ -27,13 +27,13 @@ const Vedicastro = () => {
         {/* LEFT */}
         <div className="home-left">
           <h1>
-            Vedic Astrology Course <br />
+            Jiivaastro Astrology Course <br />
             <span>Online </span>
           </h1>
 
           <p>
             Learn birth chart reading, planetary transits, predictions,
-            remedies, and much more in depth with our online Vedic Astrology
+            remedies, and much more in depth with our online Jiivaastro Astrology
             course.
           </p>
 
@@ -44,13 +44,6 @@ const Vedicastro = () => {
           <div className="students">
             <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>
 
-            <div className="avatars">
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <div className="count">1 Lakh+</div>
-            </div>
           </div>
         </div>
 

@@ -10,7 +10,7 @@ const NameNumerology = () => {
       {/* HERO SECTION */}
 
       <section className="hero-section">
-        <h3>India's Leading Vedic Science Academy</h3>
+        <h3>India's Leading Jiivaastro Science Academy</h3>
 
         <h1>
           NAME NUMEROLOGY <span>CALCULATOR</span>

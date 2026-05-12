@@ -241,6 +241,10 @@ function Navbar() {
         <li>
           <button className="call-btn">Call Now</button>
         </li>
+
+        <li>
+          <button className="call-btn">Register Now</button>
+        </li>
       </ul>
     </nav>
   );

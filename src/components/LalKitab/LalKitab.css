@@ -82,20 +82,6 @@ body {
   font-size: 14px;
 }
 
-.avatars {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.avatars img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left: -10px;
-  border: 2px solid white;
-}
-
 .count {
   margin-left: 10px;
   background: white;

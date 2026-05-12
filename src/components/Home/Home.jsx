@@ -25,11 +25,11 @@ const Home = () => {
         <div className="home-left">
           <h1>
             India's No.1 Academy For <br />
-            <span>Vedic & Occult Science Courses</span>
+            <span>Jiivaastro & Occult Science Courses</span>
           </h1>
 
           <p>
-            We offer In-demand Vedic and occult science courses for all with
+            We offer In-demand Jiivaastro and occult science courses for all with
             globally recognized certificate
           </p>
 
@@ -38,19 +38,12 @@ const Home = () => {
           <div className="students">
             <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>
 
-            <div className="avatars">
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <img src={img} alt="" />
-              <div className="count">1 Lakh+</div>
-            </div>
           </div>
         </div>
 
         {/* RIGHT */}
         <div className="home-right">
-          <img src={img} alt="vedic guru" />
+          <img src={img} alt="Jiivaastro guru" />
         </div>
       </section>
 

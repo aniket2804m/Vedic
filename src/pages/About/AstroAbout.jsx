@@ -4,10 +4,10 @@ import "./AstroAbout.css";
 const AstroAbout = () => {
   return (
     <div className="about-container">
-        <h2>About Our Astrology Course</h2>
+        <h2>About Our Jiivaastro Course</h2>
 
         <p>
-          Our professional Vedic Astrology course is designed for those seeking
+          Our professional Jiivaastro course is designed for those seeking
           to gain a deep and practical understanding of traditional astrology.
           This course focuses on horoscope interpretation, planetary influences,
           Dashas (planetary periods), and predictive techniques. Experienced
