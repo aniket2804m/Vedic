@@ -1,0 +1,271 @@
+/* CONTAINER */
+.student-container {
+  width: 100%;
+  padding: 60px 5%;
+  text-align: center;
+  margin-top: -130px;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide iframe {
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+  border-radius: 15px;
+}
+
+/* TITLE */
+.student-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.student-title span {
+  color: #7b2cbf;
+}
+
+/* SLIDER WRAPPER */
+/* SLIDER WRAPPER */
+.slider-wrapper {
+  overflow: hidden;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* SLIDER */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* EACH CARD */
+.slide {
+  min-width: 33.33%;   /* 👈 3 cards in one row */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* VIDEO CARD STYLE */
+.slide iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  border: 3px solid #f4b400;  /* 👈 yellow border like image */
+  background: black;
+}
+
+/* DOTS */
+.dots {
+  margin: 20px 0;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 6px;
+  background: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #000;
+}
+
+/* BUTTON */
+.student-btn button {
+  padding: 12px 30px;
+  border: none;
+  background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+/* 🌍 CONTAINER */
+.happy-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 50px;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #6a11cb, #241136);
+  color: white;
+
+  margin: 60px 20%;
+  margin-left: 150px;
+  overflow: hidden;
+}
+
+
+/* 📝 TEXT */
+.happy-text {
+  flex: 1;
+}
+
+.happy-text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.happy-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* 🔘 BUTTON GROUP */
+.happy-btn {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+/* LEFT BUTTON */
+.btn-primary {
+  padding: 14px 24px;
+  border: none;
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  color: white;
+  cursor: pointer;
+}
+
+/* RIGHT BUTTON */
+.btn-secondary {
+  padding: 14px 24px;
+  border: none;
+  background: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+/* OR TEXT */
+.divider {
+  padding: 0 15px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* 🖼 IMAGE */
+.happy-image {
+  flex: 1;
+  text-align: right;
+}
+
+.happy-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .happy-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .happy-text h2 {
+    font-size: 26px;
+  }
+
+  .happy-text p {
+    font-size: 14px;
+  }
+
+  .happy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6d6ef;
+  border-radius: 40px;
+  overflow: hidden;
+  width: fit-content;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* LEFT BUTTON */
+.btn-primary {
+  background: linear-gradient(90deg, #c2185b, #e91e63);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 40px 0 0 40px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* RIGHT BUTTON */
+.btn-secondary {
+  background: transparent;
+  color: #000;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 0 40px 40px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CENTER OR CIRCLE */
+.divider {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+  .happy-image {
+    text-align: center;
+  }
+
+  .happy-image img {
+    max-width: 300px;
+  }
+}
+
+/* 📱 TABLET */
+@media (max-width: 1024px) {
+  .happy-text h2 {
+    font-size: 32px;
+  }
+
+  .happy-container {
+    gap: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide video {
+    width: 100%;
+  }
+
+  .student-title {
+    font-size: 24px;
+  }
+}

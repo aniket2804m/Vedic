@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #6a11cb, #4a00e0);
+  color: white;
+  position: relative;
+}
+
+/* LOGO */
+.logo img {
+  height: 45px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  margin-left: auto;
+  align-items: center;
+  list-style: none;
+}
+
+/* LINKS */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* BUTTON */
+.call-btn {
+  background: #ff4b7d;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* DROPDOWN */
+.dropdown-parent {
+  position: relative;
+}
+
+/* ❌ REMOVE HOVER CONFLICT */
+/* .dropdown-parent:hover .mega-dropdown {
+  display: block;
+} */
+
+.nav-title {
+  cursor: pointer;
+}
+
+/* MEGA MENU */
+.mega-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding: 20px;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* SHOW (JS CONTROLLED ONLY) */
+.mega-dropdown.show {
+  display: block;
+}
+
+/* GRID */
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* LINKS */
+.mega-grid a {
+  color: #6a11cb;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #6a11cb;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 300px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 0;
+  }
+
+  .mega-dropdown {
+    position: static;
+    width: 100%;
+    background: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    transform: none;
+    left: 0;
+  }
+
+  .mega-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .mega-grid a {
+    color: #6a11cb !important;
+    display: block;
+  }
+
+  .call-btn {
+    order: -1;
+    width: 100%;
+    margin-bottom: 15px;
+    position: sticky;
+    bottom: 10px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .mega-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+  }
+}

@@ -1,0 +1,93 @@
+
+/* Curriculum */
+.curriculum {
+  padding: 60px 20px;
+  background: #f5f5f5;
+  margin-top: -30px;
+}
+
+/* HEADING */
+.curriculum h1 {
+  text-align: center;
+  font-size: 34px;
+}
+
+.sub span {
+  color: #7b2cbf;
+  border-bottom: 3px solid #7b2cbf;
+}
+
+/* SUB */
+.sub {
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+/* ACCORDION */
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+/* HEADER */
+.accordion-header {
+  background: linear-gradient(90deg, #6a0dad, #8a2be2);
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* BODY */
+.accordion-body {
+  background: #fff;
+  padding: 15px 25px;
+  border-left: 4px solid #6a0dad;
+  box-shadow: 0 2px 8px rgba(111, 37, 207, 0.1);
+}
+
+/* LIST */
+.accordion-body ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.accordion-body li {
+  margin-bottom: 8px;
+}
+
+.arrow span{
+  color: white;
+}
+
+.download {
+  text-align: center;
+  color: #eee;
+  margin-top: 40px;
+
+}
+
+.download button {
+  background: #7b2cbf;
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* ================= */
+/* 📱 MOBILE */
+/* ================= */
+@media (max-width: 768px) {
+  .curriculum h1 {
+    font-size: 24px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+}

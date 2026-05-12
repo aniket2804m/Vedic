@@ -1,0 +1,114 @@
+/* About */
+.about-container {
+  position: relative;
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #6a11cb, #240046);
+  color: white;
+  border-radius: 0;
+  margin-top: 40px;
+}
+
+/* TITLE */
+.about-container h2 {
+  font-size: 32px;
+  /* margin-bottom: 20px; */
+  margin-top: -40px;
+}
+
+/* TEXT */
+.about-container p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 1000px;
+}
+
+/* 🔘 BADGES (PILL BUTTONS) */
+
+.about-badges {
+  position: relative;
+  margin-top: -40px;
+  height: 80px;
+  margin-bottom: -60px;
+}
+
+/* COMMON */
+.about-badges .badge {
+  position: absolute;
+  background: #7b2cbf;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-top: -40px;
+  border: 2px solid white;
+}
+
+/* LEFT BADGE */
+.badge.left {
+  left: 10%;
+  bottom: -25px;
+}
+
+/* RIGHT BADGE */
+.badge.right {
+  right: 10%;
+  bottom: -25px;
+}
+
+/* 📱 MOBILE */
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .about-container h2 {
+    font-size: 24px;
+  }
+
+  .about-container p {
+    font-size: 14px;
+  }
+
+  .about-badges {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .badge {
+    position: static;
+    width: fit-content;
+  }
+
+  .badge.left{
+    left: 0;
+    bottom: 0;
+  }
+
+  .badge.right{
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* 📱 TABLET */
+
+@media (max-width: 1024px) {
+  .badge.left {
+    left: 5%;
+  }
+
+  .badge.right {
+    right: 5%;
+  }
+
+  .about-container h2 {
+    font-size: 28px;
+  }
+}

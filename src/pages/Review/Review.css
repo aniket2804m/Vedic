@@ -1,0 +1,168 @@
+.review-section {
+  padding: 1px 20px;
+  background: #f5f5f5;
+  text-align: center;
+  position: relative;
+}
+
+.review-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.review-section span {
+  color: #6a11cb;
+}
+
+/* CONTAINER */
+.review-container {
+  display: flex;
+  gap: 50px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 10px; /* 🔥 spacing for mobile scroll */
+}
+
+.review-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.review-card {
+  min-width: 320px;
+  max-width: 350px;
+  background: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
+  gap: 10px;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(209, 26, 26, 0.1);
+}
+
+/* QUOTE */
+.quote {
+  font-size: 50px;
+  color: #cbd5e1;
+}
+
+/* TEXT */
+.review-card p {
+  font-size: 14px;
+  color: #333;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+/* STARS */
+.stars {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+/* USER */
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #6a11cb;
+  margin-bottom: 10px;
+}
+
+.user h4 {
+  font-weight: 600;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 🔥 TABLET */
+@media (max-width: 768px) {
+  .review-card {
+    min-width: 70%;   /* 🔥 better fit */
+    max-width: 70%;
+  }
+
+  .review-section h2 {
+    font-size: 24px;
+  }
+
+  .arrow {
+    display: none; /* mobile swipe */
+  }
+}
+
+/* 🔥 MOBILE (MAIN FIX) */
+@media (max-width: 480px) {
+
+  .review-section {
+    padding: 40px 10px;
+  }
+
+  .review-container {
+    gap: 15px;
+    padding-left: 10px; /* 🔥 left spacing */
+  }
+
+  .review-card {
+    min-width: 85%;     /* 🔥 key fix */
+    max-width: 85%;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .quote {
+    font-size: 35px;
+  }
+
+  .review-card p {
+    font-size: 13px;
+  }
+
+  .user img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user h4 {
+    font-size: 14px;
+  }
+
+  .stars {
+    font-size: 14px;
+  }
+}

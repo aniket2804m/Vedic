@@ -1,0 +1,178 @@
+/* ========================= */
+/* MAIN CONTAINER */
+/* ========================= */
+.certificate-container {
+  width: 100%;
+  padding: 30px 10px;
+  background: #fff;
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
+.certificate-top {
+  text-align: center;
+  margin-top: -70px;
+}
+
+.certificate-top h2 {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.certificate-top span {
+  color: #7b2cbf;
+}
+
+/* ========================= */
+/* ROW */
+/* ========================= */
+.certificate-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;               /* 🔥 balanced spacing */
+  flex-wrap: wrap;
+}
+
+/* ========================= */
+/* TEXT BOX */
+/* ========================= */
+.certificate-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 520px;
+
+  background: linear-gradient(135deg, #6a11cb, #241136);
+  padding: 30px;
+  border-radius: 16px;
+  color: white;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ❌ remove negative margin (main bug) */
+/* margin-left: -60px; */
+
+.certificate-text h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+/* LIST */
+.certificate-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certificate-text ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 15px;
+}
+
+/* ✔ ICON */
+.certificate-text ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+.certificate-image {
+  flex: 1;
+  text-align: center;
+  min-width: 280px;
+}
+
+.certificate-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+.register-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #f70c81;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #d90b6e;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+  .certificate-container {
+    padding: 40px 20px;
+  }
+
+  .certificate-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .certificate-top h2 {
+    font-size: 24px;
+  }
+
+  .certificate-text {
+    padding: 20px;
+  }
+
+  .certificate-text h3 {
+    font-size: 18px;
+  }
+
+  .certificate-text ul li {
+    font-size: 14px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .certificate-row {
+    gap: 40px;
+  }
+
+  .certificate-top h2 {
+    font-size: 28px;
+  }
+}
+
+/* ========================= */
+/* 💻 LARGE SCREENS */
+/* ========================= */
+@media (min-width: 1200px) {
+  .certificate-container {
+    padding: 80px 8%;
+  }
+
+  .certificate-top h2 {
+    font-size: 36px;
+  }
+
+  .certificate-text h3 {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,285 @@
+/* ========================= */
+/* 🌍 CONTAINER */
+/* ========================= */
+.certificate-container {
+  width: 100%;
+  padding: 60px 10%;
+}
+
+/* ========================= */
+/* 🧾 TITLE */
+/* ========================= */
+.certificate-top {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certificate-top h2 {
+  font-size: 32px;
+}
+
+.certificate-top span {
+  color: #7b2cbf;
+}
+
+/* ========================= */
+/* 📦 ROW */
+/* ========================= */
+.certificate-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 70px 0;
+  flex-wrap: wrap; /* important */
+}
+
+/* ========================= */
+/* 🖼 IMAGE */
+/* ========================= */
+.certificate-image,
+.certificate-image1 {
+  flex: 1;
+  text-align: center;
+  min-width: 280px;
+}
+
+.certificate-image img,
+.certificate-image1 img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ========================= */
+/* 📝 TEXT (ROW 1) */
+/* ========================= */
+.certificate-text {
+  flex: 1;
+  min-width: 280px;
+  background: linear-gradient(to bottom, #6a11cb, #241136);
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+}
+
+.certificate-text h2 {
+  margin-bottom: 20px;
+}
+
+.certificate-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.certificate-text ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.certificate-text ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+}
+
+/* ========================= */
+/* 📝 TEXT (ROW 2) */
+/* ========================= */
+.certificate-text1 {
+  flex: 1;
+  min-width: 280px;
+}
+
+.certificate-text1 h2 {
+  margin-bottom: 10px;
+}
+
+/* ========================= */
+/* 🔘 BUTTON */
+/* ========================= */
+.register-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #f70c81;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* 🌍 COUNTRY SLIDER */
+/* ========================= */
+.country-slider {
+  height: 40px;
+  margin: 10px 0;
+}
+
+.country-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #7b2cbf;
+  animation: slide 0.5s ease;
+}
+
+/* ========================= */
+/* 📦 CERTIFICATE BOTTOM */
+/* ========================= */
+.certificate-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 80px 0;
+  flex-wrap: wrap;
+}
+
+/* TITLE FULL WIDTH */
+.certificate-bottom .certificate-top {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.certificate-bottom .certificate-top h2 {
+  font-size: 30px;
+}
+
+/* TEXT */
+.certificate-bottom .certificate-text {
+  flex: 1;
+  min-width: 280px;
+  background: linear-gradient(to bottom, #6a11cb, #241136);
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.certificate-bottom .certificate-text h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.certificate-bottom .certificate-text p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* IMAGE */
+.certificate-bottom .certificate-image1 {
+  flex: 1;
+  text-align: center;
+  min-width: 280px;
+}
+
+.certificate-bottom .certificate-image1 img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-bottom .certificate-image1 img:hover {
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* ✨ ANIMATION */
+/* ========================= */
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (0 - 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .certificate-container {
+    padding: 40px 20px;
+  }
+
+  .certificate-row,
+  .certificate-bottom {
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+  }
+
+  .certificate-top h2 {
+    font-size: 24px;
+  }
+
+  .certificate-text h2,
+  .certificate-text1 h2 {
+    font-size: 20px;
+  }
+
+  .certificate-text ul li {
+    font-size: 14px;
+  }
+
+  .country-name {
+    font-size: 22px;
+  }
+
+  .certificate-text,
+  .certificate-bottom .certificate-text {
+    padding: 20px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET (769 - 1024px) */
+/* ========================= */
+@media (max-width: 1024px) {
+
+  .certificate-row,
+  .certificate-bottom {
+    gap: 30px;
+  }
+
+  .certificate-top h2 {
+    font-size: 28px;
+  }
+
+  .certificate-text h2,
+  .certificate-text1 h2 {
+    font-size: 22px;
+  }
+
+  .country-name {
+    font-size: 24px;
+  }
+}
+
+/* ========================= */
+/* 💻 LARGE DESKTOP (1200+) */
+/* ========================= */
+@media (min-width: 1200px) {
+  .certificate-container {
+    padding: 80px 8%;
+  }
+
+  .certificate-top h2 {
+    font-size: 36px;
+  }
+
+  .certificate-text h2,
+  .certificate-text1 h2 {
+    font-size: 30px;
+  }
+
+  .country-name {
+    font-size: 32px;
+  }
+}

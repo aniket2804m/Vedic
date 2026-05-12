@@ -1,0 +1,152 @@
+/* ========================= */
+/* 🌍 FOOTER */
+/* ========================= */
+.footer {
+  background: linear-gradient(135deg, #6a11cb, #240046);
+  color: white;
+  padding-top: 60px;
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+
+/* COLUMN */
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-col h4 {
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.footer-col h2 {
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.footer-contact p {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LINKS */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer-col ul li:hover {
+  color: #ffcc00;
+}
+
+/* HIRING TAG */
+.hiring {
+  background: #ff4d6d;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* SUBSCRIBE */
+.subscribe-box {
+  display: flex;
+  margin-top: 15px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.subscribe-box input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+}
+
+.subscribe-box button {
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+/* SOCIAL */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+
+  background: #ff4d6d;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  background: #3c096c;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contact p {
+    justify-content: center;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .subscribe-box input {
+    text-align: center;
+  }
+
+  .subscribe-box button {
+    width: 100%;
+  }
+
+  .social-icons span {
+    margin: 5px;
+  }
+}

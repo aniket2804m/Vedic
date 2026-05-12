@@ -1,0 +1,192 @@
+/* Form */
+/* MAIN CONTAINER */
+.form-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+/* LEFT SIDE */
+.left-content {
+  flex: 1;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  padding: 60px;
+  position: relative;
+}
+
+.left-content .heading1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-content .heading1 h1 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.color-head {
+  color: rgb(32, 32, 156);
+}
+
+.left-content span {
+  /* background: #1e90ff; */
+  padding: 5px 10px;
+  color: black;
+}
+
+.left-content p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* RIGHT SIDE */
+.right-content {
+  flex: 1;
+  /* background: #f4f4f4; */
+  /* background: linear-gradient(135deg, #3b007a, #6a0dad); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM BOX */
+.form-box {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+}
+
+.form-box:hover {
+  border-color: blue;
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  background: #eee;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* ROW (2 INPUTS) */
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  width: 100%;
+}
+
+/* PHONE */
+.phone {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.phone span {
+  padding: 10px;
+  background: #ddd;
+}
+
+.phone input {
+  border: none;
+  background: transparent;
+  flex: 1;
+}
+
+/* TERMS */
+.terms {
+  font-size: 12px;
+  color: gray;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff2b7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  height: 45px !important;
+  background: #eee !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+.react-tel-input .flag-dropdown {
+  background: #ddd !important;
+  border: none !important;
+}
+
+/* ------------------- */
+/* 📱 MOBILE RESPONSIVE */
+/* ------------------- */
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+  }
+
+  .left-content {
+    /* text-align: center; */
+    padding: 30px;
+  }
+
+  .left-content h1 {
+    font-size: 26px;
+  }
+
+  .left-content img {
+    width: 200px;
+    margin: auto;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .form-box {
+    max-width: 100%;
+    margin: 10px;
+  }
+}
+
+/* ------------------- */
+/* 📱 TABLET */
+/* ------------------- */
+
+@media (max-width: 1024px) {
+  .left-content h1 {
+    font-size: 30px;
+  }
+
+  .form-box {
+    max-width: 350px;
+  }
+}
