@@ -169,7 +169,7 @@ function Navbar() {
               }}>
                 Blog
               </Link>
-              <Link to="#" onClick={() => {
+              <Link to="press" onClick={() => {
                 setMenuOpen(false);
                 setDropdown(null);
               }}>

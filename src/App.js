@@ -15,6 +15,7 @@ const Numerology = lazy(() => import("./components/Numerology/Numerology"));
 const Weekly = lazy(() => import("./components/Weekly/Weekly"));
 const Numero = lazy(() => import("./components/Numero/Numero"));
 const NameNumerology = lazy(() => import("./components/NameNumerology/NameNumerology"));
+const Press = lazy(() => import("./components/Press/Press"));
 
 // // Pages
 const Feature = lazy(() => import("./pages/Feature/Feature"));
@@ -67,6 +68,7 @@ function App() {
             <Route path="/Weekly" element={<Weekly />} />
             <Route path="/Numero" element={<Numero />} />
             <Route path="/name-numerology" element={<NameNumerology />} />
+            <Route path="/press" element={<Press />} />
           </Routes>
         </Suspense>
       </main>

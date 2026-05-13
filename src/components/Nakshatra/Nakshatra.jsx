@@ -32,14 +32,15 @@ const Nakshatra = () => {
       
                 
                  <p> Trusted by 1 Lakh+ Students Globally ↗ </p>
-               
+
+                <button className="home-btn">
+                     Get Course Details ↗
+                </button>
       
                 <div className="students">
                   <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>
 
-                   <button className="home-btn">
-                     Get Course Details ↗
-                </button>
+                   
                 </div>
               </div>
       
