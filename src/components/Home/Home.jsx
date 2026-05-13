@@ -15,6 +15,7 @@ const Form = lazy(() => import("../../pages/Form/Form"));
 const Certificate = lazy(() => import("../../pages/Certificate/Certificate"));
 const Student = lazy(() => import("../../pages/Student/Students"));
 const FAQ = lazy(() => import("../../pages/Faq/AstroFaq"));
+const Happy = lazy(() => import("../../pages/Happy/Happy"));
 
 const Home = () => {
 
@@ -92,6 +93,12 @@ const Home = () => {
         <ErrorBoundary>
         <Suspense fallback={<div className="loader">Loading...</div>}>
         <Student />
+         </Suspense>
+      </ErrorBoundary>
+
+      <ErrorBoundary>
+        <Suspense fallback={<div className="loader">Loading...</div>}>
+        <Happy />
          </Suspense>
       </ErrorBoundary>
 
