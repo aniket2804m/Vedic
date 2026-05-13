@@ -5,7 +5,7 @@
   box-shadow: 0 4px 20px rgba(34, 47, 126, 0.08);
 }
 
-.heading h1 {
+.heading1 h1 {
   font-size: 36px;
   font-weight: 700;
   color: white;
@@ -33,7 +33,7 @@
 }
 
 /* CARD */
-.course-card {
+.course-card1 {
   background: linear-gradient(
     to bottom,
     #462c63 50%,     /* Navbar same color */
@@ -46,11 +46,11 @@
   transition: 0.3s;
   position: relative;
   box-shadow: 0 10px 25px rgba(254, 254, 255, 0.815);
-  height: 450px;
+  height: 500px;
   border: 2px solid white;
 }
 
-.course-card:hover {
+.course-card1:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(194, 16, 3, 0.774);
   border: 2px solid black;
@@ -76,12 +76,12 @@
 }
 
 /* TEXT */
-.course-card h3 {
+.course-card1 h3 {
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-.course-card p {
+.course-card1 p {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -104,11 +104,11 @@
   box-shadow: 0 12px 25px rgba(123, 44, 191, 0.6);
 }
 
-.course-card button:hover {
+.course-card1 button:hover {
   background: #eee;
 }
 
-.course-card {
+.course-card1 {
   background: linear-gradient(180deg, #7b2cbf, #240046);
   border-radius: 15px;
   padding: 25px;
@@ -187,7 +187,7 @@
   transform: scale(1.1);
 }
   
- .course-card {
+ .course-card1 {
   height: auto;
  }
 }
