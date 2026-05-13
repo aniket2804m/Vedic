@@ -243,7 +243,7 @@ function Navbar() {
         </li>
 
         <li>
-          <button className="call-btn">Register Now</button>
+          <button className="register1">Register Now</button>
         </li>
       </ul>
     </nav>
