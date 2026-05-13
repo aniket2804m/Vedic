@@ -13,7 +13,7 @@ const AstroForm = () => {
             <div className="left-content">
               <div className="heading1">
                 <h1>Most Trusted</h1>
-                <h1 className="color-head">Vedic Astrology Course</h1>
+                <h1 className="color-head">Jiivaastro Course</h1>
               </div>
               <h3 style={{ fontWeight: "lighter", fontSize: "20px" }}>
                 Become a Professional Astrologer
@@ -28,7 +28,7 @@ const AstroForm = () => {
               </p>
     
               <p>
-                Our Vedic astrology course helps you understand everything about
+                Our Jiivaastro astrology course helps you understand everything about
                 Astrology, from basics to advanced. If you are serious about
                 learning astrology in its true and practical form, the right
                 guidance and structured learning matter the most. This program is
@@ -39,7 +39,7 @@ const AstroForm = () => {
               <p>
                 Through systematic lessons, real chart practice, and expert-led
                 sessions, learners gain the confidence to understand astrology as a
-                complete science. The addition of concepts from our Vedic numerology
+                complete science. The addition of concepts from our Jiivaastro numerology
                 course further strengthens your ability to interpret patterns and
                 make accurate predictions. For anyone committed to mastering
                 astrology, this vedic astrology course is just for you.
@@ -79,8 +79,8 @@ const AstroForm = () => {
                   <select>
                     <option>-Select Course-</option>
               <option>Tarot</option>
-              <option>Vedic Astrology</option>
-              <option>Vedic Numerology</option>
+              <option>Jiivaastro Astrology</option>
+              <option>Jiivaastro Numerology</option>
               <option>Vastu</option>
               <option>Akashic records</option>
               <option>Tarot Card Reading</option>
@@ -96,8 +96,8 @@ const AstroForm = () => {
               <option>Lal Kitab</option>
               <option>Emotional Freedom Techhniques</option>
               <option>Nakshatra Jyotish</option>
-              <option>Vedic Mastery</option>
-              <option>Vedic Residency</option>
+              <option>Jiivaastro Mastery</option>
+              <option>Jiivaastro Residency</option>
                   </select>
     
                   <div className="row">

@@ -13,7 +13,7 @@ const Footer = () => {
         {/* LEFT */}
         <div className="footer-col">
           <h4>Powered By</h4>
-          <h2>SkillEnable EduTech Pvt Ltd.</h2>
+          <h2>Glowing Growth Media.</h2>
 
           <p>
             Regd. under Ministry of Corporate Affairs <br />
@@ -70,7 +70,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        ©2025. Academy of Vedic Vidya. All Rights Reserved.
+        ©2026. Academy of Jiivaastro. All Rights Reserved.
       </div>
 
     </footer>

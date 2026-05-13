@@ -40,9 +40,6 @@ const FAQ = () => {
           </div>
         ))}
       </div>
-      <button className='register-btn'>
-            Register Now
-          </button>
     </section>
   );
 };

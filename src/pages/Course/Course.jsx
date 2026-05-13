@@ -10,7 +10,7 @@ const Course = () => {
       <div className="course-top">
         <div className="heading">
           <h1>
-            Courses <span>Offered</span>
+           Jiivaastro Courses <span>Offered</span>
           </h1>
         </div>
 

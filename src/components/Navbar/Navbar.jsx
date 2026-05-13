@@ -69,7 +69,7 @@ function Navbar() {
                   setDropdown(null);
                 }}
               >
-                Vedic Astrology
+                Jiivaastro Astrology
               </Link>
               <Link
                 to="/kp-astrology"
@@ -105,7 +105,7 @@ function Navbar() {
                   setDropdown(null);
                 }}
               >
-                Vedic Numerology
+                Jiivaastro Numerology
               </Link>
               <Link
                 to="/lo-shu"
@@ -208,7 +208,7 @@ function Navbar() {
                 setMenuOpen(false);
                 setDropdown(null);
               }}>
-                Vedic Mastery Retainer
+                Jiivaastro Mastery Retainer
               </Link>
               <Link to="#" onClick={() => {
                 setMenuOpen(false);

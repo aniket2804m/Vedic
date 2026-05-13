@@ -40,9 +40,6 @@ const KpFeedback = () => {
 
         </div>
 
-         <button className='register-btn'>
-            Register Now
-          </button>
       </div>
   )
 }

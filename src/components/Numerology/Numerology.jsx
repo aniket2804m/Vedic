@@ -23,11 +23,11 @@ const Numerology = () => {
               {/* LEFT */}
               <div className="home-left">
                 <h1>
-                 <span>Jiivaastro Numerology Course</span> WithCertification
+                 <span>Jiivaastro Numerology Course</span> With Certification
                 </h1>
       
                 <p>
-               Join our online Vedic numerology course and learn how the numbers can impact your life and growth.
+               Join our online Jiivaastro numerology course and learn how the numbers can impact your life and growth.
                 </p>
       
                 

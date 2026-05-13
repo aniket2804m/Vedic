@@ -85,7 +85,7 @@ const Certificate = () => {
         <div className="certificate-text">
           <h2>Recognized by the Government of India (DPIIT)</h2>
 
-          <p>We are proud to share that SkillEnable Edutech Private Limited, the parent company of Academy of Vedic Vidya, has been officially recognized as a startup by the Government of India under the Department for Promotion of Industry and Internal Trade (DPIIT). This recognition highlights our commitment to innovation and excellence in the Education Technology sector, empowering individuals with knowledge and skills to thrive in the modern world.</p>
+          <p>We are proud to share that SkillEnable Edutech Private Limited, the parent company of Academy of Jiivaastro, has been officially recognized as a startup by the Government of India under the Department for Promotion of Industry and Internal Trade (DPIIT). This recognition highlights our commitment to innovation and excellence in the Education Technology sector, empowering individuals with knowledge and skills to thrive in the modern world.</p>
         </div>
 
         <div className="certificate-image1">

@@ -1,15 +1,13 @@
 import React from 'react'
 import "./AstroFeedback.css";
-import { useNavigate } from "react-router-dom";
 
 const AstroFeedback = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="feedback">
         <div className="heading">
           <h1>
-            Vedic Astrology Course <span>Feedback</span>
+            Jiivaastro Course <span>Feedback</span>
           </h1>
         </div>
 
@@ -41,9 +39,6 @@ const AstroFeedback = () => {
           </div>
         </div>
 
-         <button className='register-btn' onClick={ () => navigate("/form")}>
-            Register Now
-          </button>
       </div>
   )
 }

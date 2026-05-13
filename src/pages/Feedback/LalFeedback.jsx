@@ -38,9 +38,6 @@ const LalFeedback = () => {
         </div>
       </div>
 
-       <button className='register-btn'>
-            Register Now
-          </button>
     </div>
   );
 };

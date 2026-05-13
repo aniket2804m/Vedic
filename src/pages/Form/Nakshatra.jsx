@@ -96,8 +96,8 @@ const Nakshatra = () => {
               <option>Lal Kitab</option>
               <option>Emotional Freedom Techhniques</option>
               <option>Nakshatra Jyotish</option>
-              <option>Vedic Mastery</option>
-              <option>Vedic Residency</option>
+              <option>Jiivaastro Mastery</option>
+              <option>Jiivaastro Residency</option>
             </select>
 
             <div className="row">

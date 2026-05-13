@@ -43,7 +43,7 @@ const AstroReview = () => {
           <div className="left-part">
             <img src={img} alt="logo" />
 
-            <h4>Academy of Vedic Vidya | Best Vedic Academy in Kolkata</h4>
+            <h4>Academy of Jiivaastro | Best Jiivaastro Academy in Pune</h4>
 
             <div className="stars">★★★★★</div>
 

@@ -13,14 +13,14 @@ const AstroForm = () => {
       <div className="left-content">
         <div className="heading1">
           <h1>Most Trusted</h1>
-          <h1 className="color-head">Vedic Numerology Course</h1>
+          <h1 className="color-head">Jiivaastro Numerology Course</h1>
         </div>
         <h3 style={{ fontWeight: "lighter", fontSize: "20px" }}>
           Become a Professional Numerologist
         </h3>
 
         <p>
-          Our Vedic Numerology course is designed to guide you in exploring the
+          Our Jiivaastro Numerology course is designed to guide you in exploring the
           deeper meanings and powerful vibrations hidden within numbers.
           Numerology offers profound insights into your destiny, personality,
           strengths, challenges, and overall life path. For thousands of years,
@@ -39,7 +39,7 @@ const AstroForm = () => {
         </p>
 
         <p>
-          This online Vedic Numerology course is rooted in ancient wisdom and is
+          This online Jiivaastro Numerology course is rooted in ancient wisdom and is
           carefully structured to help you understand even the most complex
           aspects of numerology in a simple and practical way. You will learn
           how to calculate and interpret key numerological elements such as your
@@ -81,8 +81,8 @@ const AstroForm = () => {
             <select>
               <option>-Select Course-</option>
               <option>Tarot</option>
-              <option>Vedic Astrology</option>
-              <option>Vedic Numerology</option>
+              <option>Jiivaastro Astrology</option>
+              <option>Jiivaastro Numerology</option>
               <option>Vastu</option>
               <option>Akashic records</option>
               <option>Tarot Card Reading</option>
@@ -98,8 +98,8 @@ const AstroForm = () => {
               <option>Lal Kitab</option>
               <option>Emotional Freedom Techhniques</option>
               <option>Nakshatra Jyotish</option>
-              <option>Vedic Mastery</option>
-              <option>Vedic Residency</option>
+              <option>Jiivaastro Mastery</option>
+              <option>Jiivaastro Residency</option>
             </select>
 
             <div className="row">

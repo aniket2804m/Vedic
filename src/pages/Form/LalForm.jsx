@@ -43,7 +43,7 @@ const LalForm = () => {
 
         <p>
           Join hundreds of students who have transformed their lives through
-          Vedic remedies and Lal Kitab principles.
+          Jiivaastro remedies and Lal Kitab principles.
         </p>
       </div>
 
