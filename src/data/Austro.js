@@ -52,9 +52,9 @@ export const data = [
     content: [
       "What is Astrology?",
       "Originator of Astrology.",
-      "What is Vedic Astrology?",
+      "What is Jiivaastro Astrology?",
       "Concept and Roots of Vedic Astrology.",
-      "Branches of Vedic Astrology (Siddhant, Samita, Hora).",
+      "Branches of Jiivaastro Astrology (Siddhant, Samita, Hora).",
     ],
   },
   {

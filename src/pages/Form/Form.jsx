@@ -13,7 +13,7 @@ const Form = () => {
       {/* LEFT SIDE */}
       <div className="left-content">
         <h1>
-          Take Your Next Step Towards <span>Vedic Science</span>
+          Take Your Next Step Towards <span>Jiivaastro</span>
         </h1>
 
         <img src={img} alt="vedic" />
@@ -52,8 +52,8 @@ const Form = () => {
             <select>
               <option>-Select Course-</option>
               <option>Tarot</option>
-              <option>Vedic Astrology</option>
-              <option>Vedic Numerology</option>
+              <option>Jiivaastro Astrology</option>
+              <option>Jiivaastro Numerology</option>
               <option>Vastu</option>
               <option>Akashic records</option>
               <option>Tarot Card Reading</option>
@@ -69,8 +69,8 @@ const Form = () => {
               <option>Lal Kitab</option>
               <option>Emotional Freedom Techhniques</option>
               <option>Nakshatra Jyotish</option>
-              <option>Vedic Mastery</option>
-              <option>Vedic Residency</option>
+              <option>Jiivaastro Mastery</option>
+              <option>Jiivaastro Residency</option>
             </select>
 
             <div className="row">

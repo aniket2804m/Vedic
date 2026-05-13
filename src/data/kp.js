@@ -3,7 +3,7 @@
 export const review = [
   {
     name: "Gautam Mishra",
-    text: "I enrolled in the Tarot Card Reading course at the Academy of Vedic Vidya, and it has been an incredible experience! The course is well-structured, easy to follow, and the instructors are highly knowledgeable.",
+    text: "I enrolled in the Tarot Card Reading course at the Academy of Jiivaastro, and it has been an incredible experience! The course is well-structured, easy to follow, and the instructors are highly knowledgeable.",
     img: "https://i.pravatar.cc/100?img=1",
   },
   {
