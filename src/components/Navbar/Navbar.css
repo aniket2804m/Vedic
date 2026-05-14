@@ -80,6 +80,14 @@ body {
   color: white;
 }
 
+.call-btn:hover {
+  border: 1px solid white;
+}
+
+.register1:hover {
+  border: 1px solid white;
+}
+
 /* DROPDOWN */
 .dropdown-parent {
   position: relative;
@@ -139,7 +147,7 @@ body {
     z-index: 1001;
   }
 
-  .nav-links {
+   .nav-links {
     position: fixed;
     top: 70px;
     left: 0;
@@ -148,8 +156,12 @@ body {
     background: #6a11cb;
     flex-direction: column;
     padding: 20px;
+    padding-bottom: 120px;
     display: none;
-    overflow-y: auto;
+    overflow-y: scroll;
+
+    -webkit-overflow-scrolling: touch;
+
     z-index: 1000;
   }
 
@@ -193,13 +205,13 @@ body {
     bottom: 10px;  
   }
 
-  .register1 {
-    order: -1;
+   .register1 {
     width: 100%;
-    margin-bottom: 15px;
-    margin-top: 5px;
+    margin: 0 auto;
+    border-radius: 30px;
     position: sticky;
     bottom: 10px;
+    z-index: 2000;
   }
 }
 
