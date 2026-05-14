@@ -85,11 +85,6 @@ body {
   position: relative;
 }
 
-/* ❌ REMOVE HOVER CONFLICT */
-/* .dropdown-parent:hover .mega-dropdown {
-  display: block;
-} */
-
 .nav-title {
   cursor: pointer;
 }
