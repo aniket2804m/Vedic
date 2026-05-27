@@ -87,4 +87,4 @@ const AstroCurricu = () => {
   );
 };
 
-export default AstroCurricu;
+export default React.memo(AstroCurricu);

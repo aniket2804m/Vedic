@@ -35,4 +35,4 @@ const PressFeature = () => {
   );
 };
 
-export default PressFeature;
+export default React.memo(PressFeature);

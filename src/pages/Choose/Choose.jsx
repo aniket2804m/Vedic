@@ -45,4 +45,4 @@ const Choose = () => {
   );
 };
 
-export default Choose;
+export default React.memo(Choose);

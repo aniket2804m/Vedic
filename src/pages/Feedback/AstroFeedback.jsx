@@ -43,4 +43,4 @@ const AstroFeedback = () => {
   )
 }
 
-export default AstroFeedback
+export default React.memo(AstroFeedback);

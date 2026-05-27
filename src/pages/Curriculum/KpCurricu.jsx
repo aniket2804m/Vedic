@@ -54,4 +54,4 @@ const KpCurricu = () => {
   );
 };
 
-export default KpCurricu;
+export default React.memo(KpCurricu);

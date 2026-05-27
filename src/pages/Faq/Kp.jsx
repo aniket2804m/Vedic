@@ -45,4 +45,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default React.memo(FAQ);

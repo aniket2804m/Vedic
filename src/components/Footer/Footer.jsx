@@ -1,19 +1,24 @@
 import React from "react";
 import "./Footer.css";
 
-import { FaPhoneAlt, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
     <footer className="footer">
-
       <div className="footer-container">
-
         {/* LEFT */}
         <div className="footer-col">
           <h4>Powered By</h4>
-          <h2>Glowing Growth Media.</h2>
+          <h2>Academy of Jiivaastro.</h2>
 
           <p>
             Regd. under Ministry of Corporate Affairs <br />
@@ -21,8 +26,12 @@ const Footer = () => {
           </p>
 
           <div className="footer-contact">
-            <p><FaPhoneAlt /> +91 - 7439041439</p>
-            <p><FaEnvelope /> admin@academyofvedicvidya.com</p>
+            <p>
+              <FaPhoneAlt /> +91 - 7400344849
+            </p>
+            <p>
+              <FaEnvelope /> Jiivaastroacademy@gmail.com
+            </p>
           </div>
         </div>
 
@@ -46,7 +55,7 @@ const Footer = () => {
           <h4>Subscribe Now!</h4>
 
           <p>
-            Rest assured, we do not send promotional emails. You will only 
+            Rest assured, we do not send promotional emails. You will only
             receive notifications when we have an ongoing offer on our courses.
           </p>
 
@@ -57,22 +66,56 @@ const Footer = () => {
           </div>
 
           {/* SOCIAL */}
+          {/* <div className="social-icons"> */}
           <div className="social-icons">
-            <span><FaInstagram /></span>
-            <span><FaFacebookF /></span>
-            <span><FaXTwitter /></span>
-            <span><FaYoutube /></span>
-            <span><FaLinkedinIn /></span>
-          </div>
-        </div>
+            <a
+              href="https://www.instagram.com/jiivaastro_academy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
 
+            <a
+              href="https://www.facebook.com/jiivaastrodotcom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="https://twitter.com/jiivaastro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter />
+            </a>
+
+            <a
+              href="https://www.youtube.com/channel/UCw8xLtLZe9KxFEWOYVsmJhQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
+          {/* </div> */}
+        </div>
       </div>
 
       {/* BOTTOM */}
       <div className="footer-bottom">
         ©2026. Academy of Jiivaastro. All Rights Reserved.
       </div>
-
     </footer>
   );
 };

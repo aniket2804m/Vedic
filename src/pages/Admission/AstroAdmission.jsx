@@ -30,4 +30,4 @@ const AstroAdmission = () => {
   )
 }
 
-export default AstroAdmission
+export default React.memo(AstroAdmission);

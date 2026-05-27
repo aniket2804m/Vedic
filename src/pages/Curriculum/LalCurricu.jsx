@@ -87,4 +87,4 @@ const LalCurricu = () => {
   );
 };
 
-export default LalCurricu;
+export default React.memo(LalCurricu);

@@ -1,7 +1,7 @@
 import React from "react";
 import "./AstroAbout.css";
 
-const LalAbout = () => {
+const NumerologyAbout = () => {
   return (
     <div className="about-container">
       <h2>About Our Vedic Numerology Course</h2>
@@ -19,4 +19,4 @@ const LalAbout = () => {
   );
 };
 
-export default LalAbout;
+export default React.memo(NumerologyAbout);

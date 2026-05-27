@@ -92,4 +92,4 @@ const NakshatraCurricu = () => {
   );
 };
 
-export default NakshatraCurricu;
+export default React.memo(NakshatraCurricu);

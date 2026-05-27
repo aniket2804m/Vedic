@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/vedic.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null); // ✅ FIX
+
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -239,11 +241,15 @@ function Navbar() {
         </li>
 
         <li>
-          <button className="call-btn">Call Now</button>
+          <button className="call-btn" onClick={() => navigate("/top")}>
+            Whatsapp Now
+          </button>
         </li>
 
         <li>
-          <button className="register1">Register Now</button>
+          <button className="register1" onClick={() => navigate("/register")}>
+            Register Now
+          </button>
         </li>
       </ul>
     </nav>

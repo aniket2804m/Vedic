@@ -94,21 +94,30 @@
 
 /* SOCIAL */
 .social-icons {
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 15px;
 }
 
-.social-icons span {
-  display: inline-flex;
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-
-  background: #ff4d6d;
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  color: white;
   border-radius: 50%;
-  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #ff4d6d, #c9184a);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.4);
 }
 
 /* BOTTOM */

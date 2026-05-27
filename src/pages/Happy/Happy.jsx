@@ -48,4 +48,4 @@ const Happy = () => {
   );
 };
 
-export default Happy;
+export default React.memo(Happy);

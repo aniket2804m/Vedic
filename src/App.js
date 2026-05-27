@@ -27,6 +27,8 @@ const Form = lazy(() => import("./pages/Form/Form"));
 const Certificate = lazy(() => import("./pages/Certificate/Certificate"));
 const KpForm = lazy(() => import("./pages/Form/KpForm"));
 const KpFeedback = lazy(() => import("./pages/Feedback/KpFeedback"));
+const Top = lazy(() => import("./components/Top"));
+const ScrollTop = lazy(() => import("./components/ScrollTop"));
 
 function App() {
   return (
@@ -34,6 +36,10 @@ function App() {
 
       {/* NAVBAR */}
       <Navbar />
+
+      <Top />
+
+      <ScrollTop />
 
        {/* MAIN CONTENT */}
       <main style={{ minHeight: "80vh", overflowX: "hidden" }}>
@@ -69,6 +75,7 @@ function App() {
             <Route path="/Numero" element={<Numero />} />
             <Route path="/name-numerology" element={<NameNumerology />} />
             <Route path="/press" element={<Press />} />
+            <Route path="/top" element={<Top />} />
           </Routes>
         </Suspense>
       </main>

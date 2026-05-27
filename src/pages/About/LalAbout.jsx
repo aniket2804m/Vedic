@@ -31,4 +31,4 @@ const LalAbout = () => {
   );
 };
 
-export default LalAbout;
+export default React.memo(LalAbout);

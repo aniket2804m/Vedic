@@ -109,4 +109,4 @@ const KpForm = () => {
   )
 }
 
-export default KpForm
+export default React.memo(KpForm);

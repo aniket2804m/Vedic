@@ -98,4 +98,4 @@ const Certificate = () => {
   );
 };
 
-export default Certificate;
+export default React.memo(Certificate);

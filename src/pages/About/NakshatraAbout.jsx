@@ -32,4 +32,4 @@ const NakshatraAbout = () => {
   );
 };
 
-export default NakshatraAbout;
+export default React.memo(NakshatraAbout);

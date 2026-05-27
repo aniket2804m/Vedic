@@ -125,4 +125,4 @@ const AstroForm = () => {
   )
 }
 
-export default AstroForm
+export default React.memo(AstroForm)

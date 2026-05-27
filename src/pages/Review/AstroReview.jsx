@@ -79,4 +79,4 @@ const AstroReview = () => {
   )
 }
 
-export default AstroReview
+export default React.memo(AstroReview);

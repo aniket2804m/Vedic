@@ -44,4 +44,4 @@ const KpFeedback = () => {
   )
 }
 
-export default KpFeedback
+export default React.memo(KpFeedback);

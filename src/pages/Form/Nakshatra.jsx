@@ -125,4 +125,4 @@ const Nakshatra = () => {
   );
 };
 
-export default Nakshatra;
+export default React.memo(Nakshatra);

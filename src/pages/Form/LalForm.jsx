@@ -126,4 +126,4 @@ const LalForm = () => {
   );
 };
 
-export default LalForm;
+export default React.memo(LalForm);

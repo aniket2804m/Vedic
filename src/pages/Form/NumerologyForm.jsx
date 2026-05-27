@@ -4,7 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import "./AstroForm.css";
 
-const AstroForm = () => {
+const NumerologyForm = () => {
   const [phone, setPhone] = useState("");
 
   return (
@@ -127,4 +127,4 @@ const AstroForm = () => {
   );
 };
 
-export default AstroForm;
+export default React.memo(NumerologyForm);

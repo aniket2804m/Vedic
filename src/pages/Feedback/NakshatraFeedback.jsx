@@ -42,4 +42,4 @@ const NakshatraFeedback = () => {
   );
 };
 
-export default NakshatraFeedback;
+export default React.memo(NakshatraFeedback);

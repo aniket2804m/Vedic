@@ -34,4 +34,4 @@ const KpAbout = () => {
   );
 };
 
-export default KpAbout;
+export default React.memo(KpAbout);

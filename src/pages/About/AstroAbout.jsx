@@ -29,4 +29,4 @@ const AstroAbout = () => {
   )
 }
 
-export default AstroAbout
+export default React.memo(AstroAbout);

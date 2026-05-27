@@ -37,4 +37,4 @@ const AstroCerticicate = () => {
   )
 }
 
-export default AstroCerticicate
+export default React.memo(AstroCerticicate);

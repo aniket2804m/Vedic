@@ -42,4 +42,4 @@ const LalFeedback = () => {
   );
 };
 
-export default LalFeedback;
+export default React.memo(LalFeedback);
