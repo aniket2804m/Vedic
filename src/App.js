@@ -29,6 +29,8 @@ const KpForm = lazy(() => import("./pages/Form/KpForm"));
 const KpFeedback = lazy(() => import("./pages/Feedback/KpFeedback"));
 const Top = lazy(() => import("./components/Top"));
 const ScrollTop = lazy(() => import("./components/ScrollTop"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Term = lazy(() => import("./components/Term"));
 
 function App() {
   return (
@@ -76,6 +78,8 @@ function App() {
             <Route path="/name-numerology" element={<NameNumerology />} />
             <Route path="/press" element={<Press />} />
             <Route path="/top" element={<Top />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Term />} />
           </Routes>
         </Suspense>
       </main>

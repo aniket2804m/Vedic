@@ -177,7 +177,7 @@ function Navbar() {
               }}>
                 Press Release
               </Link>
-              <Link to="#" onClick={() => {
+              <Link to="/contact" onClick={() => {
                 setMenuOpen(false);
                 setDropdown(null);
               }}>

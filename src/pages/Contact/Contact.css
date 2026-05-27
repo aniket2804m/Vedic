@@ -1,0 +1,81 @@
+.contact-section {
+  background: linear-gradient(to bottom, #6a00b8, #000000);
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.contact-header h4 {
+  color: #ffcc00;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-header h1 {
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 70px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px 80px;
+}
+
+.contact-box {
+  padding: 20px;
+}
+
+.line {
+  width: 100px;
+  height: 12px;
+  background: white;
+  margin: 0 auto 30px;
+}
+
+.contact-box:nth-child(2) .line {
+  background: #ffcc00;
+}
+
+.contact-box h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f1f1f1;
+}
+
+.map-container iframe {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contact-header h1 {
+    font-size: 30px;
+  }
+
+  .contact-header h4 {
+    font-size: 20px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-box h2 {
+    font-size: 24px;
+  }
+
+  .contact-box p {
+    font-size: 16px;
+  }
+}

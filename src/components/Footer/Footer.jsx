@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 import {
   FaPhoneAlt,
@@ -43,10 +44,14 @@ const Footer = () => {
             <li>
               Become an Instructor <span className="hiring">Hiring!</span>
             </li>
-            <li>Privacy Policy</li>
-            <li>Term of Use</li>
-            <li>Contact Us</li>
-            <li>About Us</li>
+            <li><Link to="/" style={{color: 'white', textDecoration: 'none'}} >Home</Link></li>
+            <li><Link to="/privacy" style={{color: 'white', textDecoration: 'none'}} >Privacy Policy</Link></li>
+            <li><Link to="/terms" style={{color: 'white', textDecoration: 'none'}} >Term of Use</Link></li>
+            <li><Link to="/services" style={{color: 'white', textDecoration: 'none'}} >Our Services</Link></li>
+            <li><Link to="/contact" style={{color: 'white', textDecoration: 'none'}} >Contact Us</Link></li>
+            <li><Link to="/blogs" style={{color: 'white', textDecoration: 'none'}} >Blogs</Link></li>
+            <li><Link to="/gallery" style={{color: 'white', textDecoration: 'none'}} >Gallery</Link></li>
+            <li><Link to="/about" style={{color: 'white', textDecoration: 'none'}} >About Us</Link></li>
           </ul>
         </div>
 
