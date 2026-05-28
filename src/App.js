@@ -32,6 +32,9 @@ const ScrollTop = lazy(() => import("./components/ScrollTop"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 const Term = lazy(() => import("./components/Term"));
 
+const ChatBot = lazy(() => import("./components/ChatBot"));
+const Careers = lazy(() => import("./components/Careers"));
+
 function App() {
   return (
     <Router>
@@ -80,11 +83,14 @@ function App() {
             <Route path="/top" element={<Top />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Term />} />
+            <Route path="/career" element={<Careers />} />
           </Routes>
         </Suspense>
       </main>
 
       <Footer />
+
+      <ChatBot />
 
     </Router>
   );
