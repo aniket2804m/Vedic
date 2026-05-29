@@ -7,8 +7,8 @@ import img5 from "../assets/press/Press1.png";
 
 export const courses = [
   {
-    title: "Jiivaastro Mastery Retainer Program",
-    desc: "Jiivaastro Mastery Retainer Program is a deeply structured journey that brings together ancient Vedic wisdom, personal embodiment, & modern consultation frameworks into one integrated path.",
+    title: "16 वर्षों से आध्यात्मिक मार्गदर्शन की मिसाल: Dr. Sneha Jadhav ने ‘Jiivaastro Academy’ के माध्यम से हजारों लोगों के जीवन में लाई सकारात्मक ऊर्जा",
+    desc: " इसी उद्देश्य के साथ पिछले 16 वर्षों अपने ज्ञान, अनुभव और आध्यात्मिक समझ के माध्यम से उन्होंने “Jiivaastro Academy” को एक भरोसेमंद और सम्मानित पहचान दिलाई है ",
     image: img5,
     link: "https://samacharwani.com/2026/05/28/dr-sneha-jadhav-jivaastro-academy-success-story/"
   },

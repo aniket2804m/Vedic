@@ -23,14 +23,14 @@ const PressFeature = () => {
               <img src={item.image} alt={item.title} />
             </div>
 
-            <h3>{item.title}</h3>
+            <p>{item.title}</p>
             <p>{item.desc}</p>
 
             <button
               className="learn-btn"
               onClick={() => window.open(item.link, "_blank")}
             >
-              Learn More →
+              Read More →
             </button>
           </div>
         ))}

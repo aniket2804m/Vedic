@@ -19,7 +19,7 @@ const Press = () => {
         {/* LEFT */}
         <div className="home-left">
           <h1>
-                  AVV <br />
+                  Jiivastro Academy <br />
             News <span>Room</span>
           </h1>
 
