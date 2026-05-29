@@ -293,7 +293,7 @@ const ExploreListing = ({ search }) => {
         </div>
 
         {/* Filters */}
-        {/* <div className="el-filters">
+        <div className="el-filters">
           <div className="el-filter-card">
             <input className="el-filter-input" type="text" placeholder="🔍 Search by category..."
               value={category} onChange={(e) => setCategory(e.target.value)} />
@@ -306,17 +306,17 @@ const ExploreListing = ({ search }) => {
             </div>
             <button className="el-reset-btn" onClick={handleReset}>✕ Reset</button>
           </div>
-        </div> */}
+        </div>
 
         {/* Category Pills */}
-        {/* <div className="el-categories">
+        <div className="el-categories">
           {categories.map((cat) => (
             <button key={cat} className={`el-cat-pill ${activeCategory === cat ? "active" : ""}`}
               onClick={() => handleCategoryClick(cat)}>
               {cat}
             </button>
           ))}
-        </div> */}
+        </div>
 
         {/* Meta */}
         {/* <div className="el-meta">
