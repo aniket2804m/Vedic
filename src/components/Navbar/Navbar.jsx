@@ -118,16 +118,22 @@ function Navbar() {
               >
                 Lo Shu Numerology
               </Link>
-              <Link to="/vastu" onClick={() => {
-  setMenuOpen(false);
-  setDropdown(null);
-}}>
+              <Link
+                to="/vastu"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Vastu Shastra
               </Link>
-              <Link to="/crystal" onClick={() => {
-  setMenuOpen(false);
-  setDropdown(null);
-}}>
+              <Link
+                to="/crystal"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Crystal Healing
               </Link>
             </div>
@@ -147,46 +153,67 @@ function Navbar() {
             className={`mega-dropdown ${dropdown === "links" ? "show" : ""}`}
           >
             <div className="mega-grid">
-              <Link to="/Weekly" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="/Weekly"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Weekly Horoscope
               </Link>
-              <Link to="/Numero" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
-               Name Numerology Calculator
+              <Link
+                to="/Numero"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
+                Name Numerology Calculator
               </Link>
-              <Link to="/name-numerology" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="/name-numerology"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Numerology Calculator
               </Link>
-              <Link to="#" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="#"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Blog
               </Link>
-              <Link to="press" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="press"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Press Release
               </Link>
-              <Link to="/contact" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="/contact"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Contact Us
               </Link>
-              <Link to="#" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="#"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 About Us
               </Link>
             </div>
@@ -206,16 +233,22 @@ function Navbar() {
             className={`mega-dropdown ${dropdown === "program" ? "show" : ""}`}
           >
             <div className="mega-grid">
-              <Link to="#" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="#"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Jiivaastro Mastery Retainer
               </Link>
-              <Link to="#" onClick={() => {
-                setMenuOpen(false);
-                setDropdown(null);
-              }}>
+              <Link
+                to="#"
+                onClick={() => {
+                  setMenuOpen(false);
+                  setDropdown(null);
+                }}
+              >
                 Vedic Practitioner Residency
               </Link>
             </div>
@@ -232,49 +265,75 @@ function Navbar() {
         </li> */}
 
         <li>
-          <Link to="/career" onClick={() => {
-            setMenuOpen(false);
-            setDropdown(null);
-          }}>
+          <Link
+            to="/career"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+            }}
+          >
             Career
           </Link>
         </li>
 
         <li>
-          <Link to="/gallery" onClick={() => {
-            setMenuOpen(false);
-            setDropdown(null);
-          }}>
+          <Link
+            to="/gallery"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+            }}
+          >
             Gallery
           </Link>
         </li>
 
         <li>
-          <Link to="/explore" onClick={() => {
-            setMenuOpen(false);
-            setDropdown(null);
-          }}>
+          <Link
+            to="/explore"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+            }}
+          >
             Explore Courses
           </Link>
         </li>
 
         <li>
-          <Link to="/listing" onClick={() => {
-            setMenuOpen(false);
-            setDropdown(null);
-          }}>
+          <Link
+            to="/listing"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+            }}
+          >
             Add Course
           </Link>
         </li>
 
         <li>
-          <button className="call-btn" onClick={() => navigate("/register")}>
+          <button
+            className="call-btn"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+              navigate("/register");
+            }}
+          >
             Register
           </button>
         </li>
 
         <li>
-          <button className="register1" onClick={() => navigate("/login")}>
+          <button
+            className="register1"
+            onClick={() => {
+              setMenuOpen(false);
+              setDropdown(null);
+              navigate("/login");
+            }}
+          >
             Login
           </button>
         </li>
