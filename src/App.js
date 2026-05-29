@@ -35,6 +35,22 @@ const Term = lazy(() => import("./components/Term"));
 const ChatBot = lazy(() => import("./components/ChatBot"));
 const Careers = lazy(() => import("./components/Careers"));
 
+const CheckoutPage = lazy(() => import("./components/CheckoutPage"));
+
+const AuthPage = lazy(() => import("./components/Auth/Login"));
+
+const Register = lazy(() => import("./components/Auth/Register"));
+
+const Listing = lazy(() => import("./components/Listing/Listing"));
+
+const Explore = lazy(() => import("./components/Explore/Explorelisting"));
+
+const EditListing = lazy(() => import("./components/Explore/EditListing"));
+
+const DeleteListing = lazy(() => import("./components/Explore/DeleteListing"));
+
+const Gallary = lazy(() => import("./components/Gallary/Gallary"));
+
 function App() {
   return (
     <Router>
@@ -84,6 +100,14 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Term />} />
             <Route path="/career" element={<Careers />} />
+            <Route path="/payment" element={<CheckoutPage />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/listing" element={<Listing />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/edit-listing" element={<EditListing />} />
+            <Route path="/delete-listing" element={<DeleteListing />} />
+            <Route path="/gallery" element={<Gallary />} />
           </Routes>
         </Suspense>
       </main>

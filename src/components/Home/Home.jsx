@@ -26,11 +26,11 @@ const Home = () => {
         <div className="home-left">
           <h1>
             India's No.1 Academy For <br />
-            <span>Jiivaastro & Occult Science Courses</span>
+            <span>jiivaastro Academy & Occult Science Courses</span>
           </h1>
 
           <p>
-            We offer In-demand Jiivaastro and occult science courses for all with
+            We offer In-demand jiivaastro Academy and occult science courses for all with
             globally recognized certificate
           </p>
 

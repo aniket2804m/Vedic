@@ -6,7 +6,7 @@ const WhatsAppWidget = () => {
   const [message, setMessage] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
 
-  const phoneNumber = "7400344849";
+  const phoneNumber = "7057319333";
 
   // ✅ responsive fix
   useEffect(() => {

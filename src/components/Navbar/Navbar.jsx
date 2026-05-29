@@ -222,14 +222,14 @@ function Navbar() {
           </div>
         </li>
 
-        <li>
+        {/* <li>
           <Link to="/payment" onClick={() => {
             setMenuOpen(false);
             setDropdown(null);
           }}>
             Payment
           </Link>
-        </li>
+        </li> */}
 
         <li>
           <Link to="/career" onClick={() => {
@@ -241,14 +241,41 @@ function Navbar() {
         </li>
 
         <li>
-          <button className="call-btn" onClick={() => navigate("/top")}>
-            Whatsapp Now
+          <Link to="/gallery" onClick={() => {
+            setMenuOpen(false);
+            setDropdown(null);
+          }}>
+            Gallery
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/explore" onClick={() => {
+            setMenuOpen(false);
+            setDropdown(null);
+          }}>
+            Explore Courses
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/listing" onClick={() => {
+            setMenuOpen(false);
+            setDropdown(null);
+          }}>
+            Add Course
+          </Link>
+        </li>
+
+        <li>
+          <button className="call-btn" onClick={() => navigate("/register")}>
+            Register
           </button>
         </li>
 
         <li>
-          <button className="register1" onClick={() => navigate("/register")}>
-            Register Now
+          <button className="register1" onClick={() => navigate("/login")}>
+            Login
           </button>
         </li>
       </ul>

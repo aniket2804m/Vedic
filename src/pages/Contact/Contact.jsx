@@ -1,5 +1,13 @@
 import "./Contact.css";
 
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 function ContactUs() {
   return (
     <section className="contact-section">
@@ -23,7 +31,7 @@ function ContactUs() {
         <div className="contact-box">
           <div className="line"></div>
           <h2>Get In Touch</h2>
-          <p>+91 7400344849</p>
+          <p>+91 7057319333</p>
           <p>Jiivaastroacademy@gmail.com</p>
         </div>
 
@@ -33,7 +41,57 @@ function ContactUs() {
           <p>Mon- Fri: 10:30AM - 7:00PM</p>
           <p>Saturday: 10:30AM-5:30PM</p>
         </div>
+
+         <div className="contact-box">
+          <div className="line"></div>
+          <h2>Social Media</h2>
+          <p>Follow us on social media for the latest updates and news.</p>
+          <div className="social-icons">
+            <a
+              href="https://www.instagram.com/jiivaastro_academy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="https://www.facebook.com/jiivaastrodotcom"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="https://twitter.com/jiivaastro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter />
+            </a>
+
+            <a
+              href="https://www.youtube.com/channel/UCw8xLtLZe9KxFEWOYVsmJhQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
+        </div>
+
       </div>
+
+      
 
       <div className="map-container">
         <iframe

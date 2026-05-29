@@ -1,75 +1,86 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Student.css";
 
-const data = [
-  { id: 1, videoId: "4Ef_NCKcBZg" },
-  { id: 2, videoId: "ysz5S6PUM-U" },
-  { id: 3, videoId: "ScMzIvxBSi4" },
-  { id: 4, videoId: "4Ef_NCKcBZg" },
-  
-];
-
 const Student = () => {
+
+  const videos = [
+    "https://www.youtube.com/watch?v=4Ef_NCKcBZg",
+    "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+    "https://youtu.be/kuqtgiVBK8M?si=8fKO79j6W2qi_5YE",
+    "https://www.youtube.com/watch?v=tgbNymZ7vqY",
+  ];
+
+  // Convert URL → Video ID
+  const getVideoId = (url) => {
+  const regExp =
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/;
+
+  const match = url.match(regExp);
+
+  return match ? match[1] : "";
+};
+
   const [current, setCurrent] = useState(0);
 
-  // AUTO SLIDE
+  // Auto Scroll
   useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrent((prev) =>
-      prev === data.length - 1 ? 0 : prev + 1
-    );
-  }, 4000);
+    const interval = setInterval(() => {
 
-  return () => clearInterval(interval);
-}, []);
+      setCurrent((prev) =>
+        prev >= videos.length - 3 ? 0 : prev + 1
+      );
+
+    }, 3000);
+
+    return () => clearInterval(interval);
+
+  }, [videos.length]);
 
   return (
-    <div className="student-container">
-      {/* TITLE */}
-      <h2 className="student-title">
-        What Our <span>Students Say</span>
-      </h2>
+    <section className="student-section">
 
-      {/* SLIDER */}
-     <div className="slider-wrapper">
-  <div
-  className="slider"
-  style={{
-    transform: `translateX(${current * 100}%)`,
-  }}
->
-    {data.map((item) => (
-      <div className="slide" key={item.id}>
-        <iframe
-          src={`https://www.youtube.com/embed/${item.videoId}?rel=0&modestbranding=1`}
-          title="Student Review"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe>
-      </div>
-    ))}
-  </div>
-</div>
-
-      {/* DOTS */}
-      <div className="dots">
-        {data.map((_, index) => (
-          <span
-            key={index}
-            className={index === current ? "dot active" : "dot"}
-            onClick={() => setCurrent(index)}
-          ></span>
-        ))}
+      <div className="student-header">
+        <h2 className="student-title">
+          What Our <span>Students Say</span>
+        </h2>
       </div>
 
-      {/* BUTTON */}
-      <div className="student-btn">
-        <button>View Our Courses →</button>
+      {/* Slider */}
+      <div className="slider-wrapper">
+
+        <div
+          className="slider"
+          style={{
+            transform: `translateX(-${current * 33.33}%)`,
+          }}
+        >
+
+          {videos.map((video, index) => (
+
+            <div className="slide" key={index}>
+
+              <div className="video-card">
+
+                <iframe
+                  src={`https://www.youtube.com/embed/${getVideoId(video)}?rel=0`}
+                  title={`video-${index}`}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
       </div>
 
-      
-    </div>
+    </section>
   );
 };
 
-export default React.memo(Student);
+export default Student;

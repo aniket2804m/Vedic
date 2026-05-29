@@ -19,7 +19,7 @@ const Footer = () => {
         {/* LEFT */}
         <div className="footer-col">
           <h4>Powered By</h4>
-          <h2>Academy of Jiivaastro.</h2>
+          <h2>jiivaastro Academy.</h2>
 
           <p>
             Regd. under Ministry of Corporate Affairs <br />
@@ -28,7 +28,7 @@ const Footer = () => {
 
           <div className="footer-contact">
             <p>
-              <FaPhoneAlt /> +91 - 7400344849
+              <FaPhoneAlt /> +91 - 7057319333
             </p>
             <p>
               <FaEnvelope /> Jiivaastroacademy@gmail.com
@@ -119,7 +119,7 @@ const Footer = () => {
 
       {/* BOTTOM */}
       <div className="footer-bottom">
-        ©2026. Academy of Jiivaastro. All Rights Reserved.
+        ©2026. jiivaastro Academy. All Rights Reserved.
       </div>
     </footer>
   );

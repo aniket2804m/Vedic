@@ -63,7 +63,7 @@ const ChatBot = () => {
       msg.includes("call")
     ) {
       return {
-        text: "📞 Contact us at +91 - 7400344849 or email Jiivaastroacademy@gmail.com",
+        text: "📞 Contact us at +91 - 7057319333 or email Jiivaastroacademy@gmail.com",
         sender: "bot",
       };
     }
@@ -79,7 +79,7 @@ const ChatBot = () => {
     // Website Guide
     if (msg.includes("home")) {
       return {
-        text: "🏠 Home page contains all academy information and featured courses.",
+        text: "🏠 Home page contains all jiivaastro Academy information and featured courses.",
         sender: "bot",
       };
     }
@@ -108,7 +108,7 @@ const ChatBot = () => {
     // Greeting
     if (msg.includes("hi") || msg.includes("hello") || msg.includes("hey")) {
       return {
-        text: "🙏 Welcome to Academy of Jiivaastro. How can I help you today?",
+        text: "🙏 Welcome to jiivaastro Academy. How can I help you today?",
         sender: "bot",
       };
     }
