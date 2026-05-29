@@ -1,5 +1,6 @@
 import React from 'react'
 import { lazy, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
 import img from "../../assets/vedic.png";
 import "./Kp.css";
@@ -16,6 +17,9 @@ const AstroCertificate = lazy(() => import("../../pages/Certificate/AstroCertici
 const FAQ = lazy(() => import("../../pages/Faq/Kp"));
 
 const Kp = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='home-container'>
       
@@ -33,6 +37,10 @@ const Kp = () => {
                 <button className="home-btn">
                   Trusted by 1 Lakh+ Students Globally ↗
                 </button>
+
+                <button className="home-btn" onClick={() => navigate("/explore")}>
+            Explore Courses ↗
+          </button>
       
                 <div className="students">
                   <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>

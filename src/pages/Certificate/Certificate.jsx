@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Certificate.css";
 import img1 from "../../assets/map.png";
+import img2 from "../../assets/gallery/Photo1.jpeg";
 
 const countries = ["India", "Nepal", "USA", "UK", "Canada"];
 
 const Certificate = () => {
+
+  const navigate = useNavigate();
 
   const [index, setIndex] = useState(0);
 
@@ -41,11 +45,11 @@ const Certificate = () => {
             <li>Globally recognized certification.</li>
           </ul>
 
-          <button className="register-btn">Register Now ➢</button>
+          <button className="register-btn" onClick={() => navigate("/register")}>Register Now ➢</button>
         </div>
 
         <div className="certificate-image">
-          <img src={img1} alt="certificate" />
+          <img src={img2} alt="certificate" />
         </div>
 
       </div>

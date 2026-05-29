@@ -1,5 +1,6 @@
 import React from "react";
 import { lazy, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
 import img from "../../assets/vedic.png";
@@ -19,6 +20,8 @@ const Happy = lazy(() => import("../../pages/Happy/Happy"));
 
 const Home = () => {
 
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       <section className="home">
@@ -34,7 +37,9 @@ const Home = () => {
             globally recognized certificate
           </p>
 
-          <button className="home-btn">Explore Courses ↗</button>
+          <button className="home-btn" onClick={() => navigate("/explore")}>
+            Explore Courses ↗
+          </button>
 
           <div className="students">
             <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>

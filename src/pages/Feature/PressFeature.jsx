@@ -1,7 +1,7 @@
 import React from "react";
 import "./PressFeature.css";
 
-import { courses } from "../../data/courses";
+import { courses } from "../../data/Press";
 
 const PressFeature = () => {
   return (

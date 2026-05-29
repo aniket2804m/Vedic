@@ -1,5 +1,6 @@
 import React from "react";
 import { lazy, Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Press.css";
 import img from "../../assets/vedic.png";
@@ -9,6 +10,8 @@ import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 const Course = lazy(() => import("../../pages/Feature/PressFeature"));
 
 const Press = () => {
+
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
@@ -24,7 +27,9 @@ const Press = () => {
            Explore our official news articles and stay informed about our company’s latest milestones and developments.
           </p>
 
-          <button className="home-btn">Explore Courses ↗</button>
+          <button className="home-btn" onClick={() => navigate("/explore")}>
+            Explore Courses ↗
+          </button>
 
           <div className="students">
             <p className="badge">Over 1 Lakh Satisfied Learners Globally</p>

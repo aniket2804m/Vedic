@@ -171,6 +171,11 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+
+  .heading1 h1 {
+    font-size: 28px;
+  }
+
   .course-grid {
     grid-template-columns: 1fr;
   }
