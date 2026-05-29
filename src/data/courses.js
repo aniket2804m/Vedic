@@ -3,11 +3,14 @@ import img2 from "../assets/vedic.png";
 import img3 from "../assets/vedic.png";
 import img4 from "../assets/vedic.png";
 
+import img5 from "../assets/press/Press1.png";
+
 export const courses = [
   {
     title: "Jiivaastro Mastery Retainer Program",
     desc: "Jiivaastro Mastery Retainer Program is a deeply structured journey that brings together ancient Vedic wisdom, personal embodiment, & modern consultation frameworks into one integrated path.",
-    image: img1,
+    image: img5,
+    link: "https://samacharwani.com/2026/05/28/dr-sneha-jadhav-jivaastro-academy-success-story/"
   },
   {
     title: "Jiivaastro Practitioner Residency Program",

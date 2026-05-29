@@ -10,10 +10,9 @@ const PressFeature = () => {
       <div className="course-top">
         <div className="heading1">
           <h1>
-           We Are <span>Featured In</span>
+            We Are <span>Featured In</span>
           </h1>
         </div>
-
       </div>
 
       {/* CARDS */}
@@ -27,7 +26,12 @@ const PressFeature = () => {
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
 
-            <button className="learn-btn">Learn More →</button>
+            <button
+              className="learn-btn"
+              onClick={() => window.open(item.link, "_blank")}
+            >
+              Learn More →
+            </button>
           </div>
         ))}
       </div>
