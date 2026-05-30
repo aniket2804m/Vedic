@@ -6,7 +6,7 @@
 }
 
 .heading h1 {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
 }
 
@@ -182,7 +182,7 @@
 
   .course-top h2 {
     font-size: 24px;
-    
+    margin-top: 10px;
   }
 
   .learn-btn {
