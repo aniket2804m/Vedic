@@ -6,6 +6,12 @@ import photo2 from "../../assets/gallery/Photo2.jpeg";
 import photo3 from "../../assets/gallery/Photo3.jpeg";
 import photo4 from "../../assets/gallery/Photo4.jpeg";
 import photo5 from "../../assets/gallery/Photo5.jpeg";
+import photo7 from "../../assets/gallery/Photo7.jpeg";
+import photo8 from "../../assets/gallery/Photo8.jpeg";
+import photo9 from "../../assets/gallery/Photo9.jpeg";
+import photo10 from "../../assets/gallery/Photo10.jpeg";
+import photo11 from "../../assets/gallery/Photo11.jpeg";
+import photo12 from "../../assets/gallery/Photo12.jpeg";
 
 import video1 from "../../assets/gallery/Photo6.mp4";
 
@@ -18,6 +24,12 @@ const Gallery = () => {
     { type: "image", src: photo3 },
     { type: "image", src: photo4 },
     { type: "image", src: photo5 },
+    { type: "image", src: photo7 },
+    { type: "image", src: photo8 },
+    { type: "image", src: photo9 },
+    { type: "image", src: photo10 },
+    { type: "image", src: photo11 },
+    { type: "image", src: photo12 },
     { type: "video", src: video1 },
   ];
 
