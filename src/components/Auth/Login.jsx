@@ -72,13 +72,13 @@ const Login = ({ setRole }) => {
       });
 
       // Redirect
-      // setTimeout(() => {
-      //   navigate(role === "admin" ? "/admin" : "/dashboard");
-      // }, 1500);
-
       setTimeout(() => {
-        navigate("/");
+        navigate(role === "admin" ? "/admin" : "/dashboard");
       }, 1500);
+
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 1500);
 
     } catch (err) {
   console.log("FULL ERROR:", err);

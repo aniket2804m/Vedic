@@ -163,6 +163,39 @@ body {
   margin-left: auto;
 }
 
+/* Account Dropdown */
+.account-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  min-width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 8px 0;
+  z-index: 2000;
+}
+
+.account-dropdown li {
+  border: none;
+  padding: 0;
+}
+
+.account-dropdown button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.account-dropdown button:hover {
+  background: #f3f4f6;
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
@@ -240,10 +273,43 @@ body {
     width: 100%;
     margin-top: 10px;
   }
+
+  .account-dropdown {
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .account-dropdown li {
+    width: 100%;
+  }
+
+  .account-dropdown button {
+    width: 100%;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .account-dropdown button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .register1 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
 }
 
 /* Desktop Large Screens */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .nav-links {
     gap: 22px;
   }
@@ -252,4 +318,33 @@ body {
   .nav-title {
     font-size: 15px;
   }
+
+  .register1 {
+    white-space: nowrap;
+  }
+
+  .account-dropdown {
+    min-width: 180px;
+  }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .register1 {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .account-dropdown {
+    min-width: 170px;
+    top: 45px;
+  }
+
+  .account-dropdown button {
+    font-size: 14px;
+  }
+} */

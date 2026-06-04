@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./App.css";
 
@@ -14,7 +14,9 @@ const Nakshatra = lazy(() => import("./components/Nakshatra/Nakshatra"));
 const Numerology = lazy(() => import("./components/Numerology/Numerology"));
 const Weekly = lazy(() => import("./components/Weekly/Weekly"));
 const Numero = lazy(() => import("./components/Numero/Numero"));
-const NameNumerology = lazy(() => import("./components/NameNumerology/NameNumerology"));
+const NameNumerology = lazy(
+  () => import("./components/NameNumerology/NameNumerology"),
+);
 const Press = lazy(() => import("./components/Press/Press"));
 
 // // Pages
@@ -51,10 +53,17 @@ const DeleteListing = lazy(() => import("./components/Explore/DeleteListing"));
 
 const Gallary = lazy(() => import("./components/Gallary/Gallary"));
 
+const AdminRoute = lazy(() => import("./components/Protected/AdminRoutes"));
+
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
+
+const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
+
+const AdminCourse = lazy(() => import("./pages/admin/AdminCourse"));
+
 function App() {
   return (
     <Router>
-
       {/* NAVBAR */}
       <Navbar />
 
@@ -62,21 +71,20 @@ function App() {
 
       <ScrollTop />
 
-       {/* MAIN CONTENT */}
+      {/* MAIN CONTENT */}
       <main style={{ minHeight: "80vh", overflowX: "hidden" }}>
         <Suspense
-    fallback={
-      <div className="premium-loader">
-        <div className="loader-content">
-          <div className="spinner"></div>
-          <h2>Loading...</h2>
-          <p>Please wait, preparing your experience</p>
-        </div>
-      </div>
-    }
-  >
+          fallback={
+            <div className="premium-loader">
+              <div className="loader-content">
+                <div className="spinner"></div>
+                <h2>Loading...</h2>
+                <p>Please wait, preparing your experience</p>
+              </div>
+            </div>
+          }
+        >
           <Routes>
-
             <Route path="/" element={<Home />} />
             <Route path="/feature" element={<Feature />} />
             <Route path="/course" element={<Course />} />
@@ -103,7 +111,32 @@ function App() {
             <Route path="/payment" element={<CheckoutPage />} />
             <Route path="/login" element={<AuthPage />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/listing" element={<Listing />} />
+
+            {/* <Route path="/listing" element={ <AdminRoute><Listing /></AdminRoute> } />
+            <Route path="/dashboard" element={ <AdminRoute><AdminDashboard /></AdminRoute> } />
+            <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}></Route>
+            <Route path="/admin/courses" element={<AdminRoute><AdminCourse /></AdminRoute>}></Route> */}
+
+            <Route path="/listing" element={ <AdminRoute><Listing /></AdminRoute> } />
+
+            <Route path="/dashboard" element={ <AdminRoute><AdminDashboard /></AdminRoute> } />
+            
+
+            <Route
+              path="/admin"
+              element={
+                <AdminRoute>
+                  <AdminLayout />
+                </AdminRoute>
+              }
+            >
+              {/* <Route index element={<AdminDashboard />} /> */}
+              <Route path="/admin/courses" element={<AdminCourse />} />
+              {/* <Route path="users" element={<ManageUsers />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="quiz-report" element={<QuizReport />} /> */}
+            </Route>
+
             <Route path="/explore" element={<Explore />} />
             <Route path="/edit-listing" element={<EditListing />} />
             <Route path="/delete-listing" element={<DeleteListing />} />
@@ -115,7 +148,6 @@ function App() {
       <Footer />
 
       <ChatBot />
-
     </Router>
   );
 }

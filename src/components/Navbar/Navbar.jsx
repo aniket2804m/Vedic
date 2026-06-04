@@ -9,6 +9,27 @@ function Navbar() {
 
   const navigate = useNavigate();
 
+  const role = localStorage.getItem("role");
+
+  // Account Dropdown
+
+  const [accountDropdown, setAccountDropdown] = useState(false);
+  const token = localStorage.getItem("token");
+
+  // Logout Function
+  const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("role");
+
+  setMenuOpen(false);
+  setDropdown(null);
+  setAccountDropdown(false);
+
+  navigate("/login");
+};
+
+
+// Menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -300,43 +321,64 @@ function Navbar() {
           </Link>
         </li>
 
-        <li>
-          <Link
-            to="/listing"
-            onClick={() => {
-              setMenuOpen(false);
-              setDropdown(null);
-            }}
-          >
-            Add Course
-          </Link>
-        </li>
+       {role === "admin" && (
+  <li>
+    <Link
+      to="/listing"
+      onClick={() => {
+        setMenuOpen(false);
+        setDropdown(null);
+      }}
+    >
+      Add Course
+    </Link>
+  </li>
+)}
 
+        <li style={{ position: "relative" }}>
+  <button
+    className="register1"
+    onClick={() => setAccountDropdown(!accountDropdown)}
+  >
+    Account ▼
+  </button>
+
+  {accountDropdown && (
+    <ul className="account-dropdown">
+      {!token ? (
+        <>
+          <li>
+            <button
+              onClick={() => {
+                navigate("/register");
+                setAccountDropdown(false);
+              }}
+            >
+              Register
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => {
+                navigate("/login");
+                setAccountDropdown(false);
+              }}
+            >
+              Login
+            </button>
+          </li>
+        </>
+      ) : (
         <li>
-          <button
-            className="call-btn"
-            onClick={() => {
-              setMenuOpen(false);
-              setDropdown(null);
-              navigate("/register");
-            }}
-          >
-            Register
+          <button onClick={handleLogout}>
+            Logout
           </button>
         </li>
-
-        <li>
-          <button
-            className="register1"
-            onClick={() => {
-              setMenuOpen(false);
-              setDropdown(null);
-              navigate("/login");
-            }}
-          >
-            Login
-          </button>
-        </li>
+      )}
+    </ul>
+  )}
+</li>
       </ul>
     </nav>
   );
