@@ -45,6 +45,9 @@ const Login = ({ setRole }) => {
       });
     }
 
+    console.log("Origin:", window.location.origin);
+console.log("API Base URL:", API.defaults.baseURL);
+
     try {
       setLoading(true);
 
@@ -82,8 +85,11 @@ const Login = ({ setRole }) => {
 
     } catch (err) {
   console.log("FULL ERROR:", err);
+  console.log("ERROR MESSAGE:", err.message);
+  console.log("ERROR CODE:", err.code);
+  console.log("ERROR NAME:", err.name);
   console.log("RESPONSE:", err.response);
-  console.log("DATA:", err.response?.data);
+  console.log("REQUEST:", err.request);
 
   setMessage({
     error: err.response?.data?.message || "Something went wrong",
