@@ -119,7 +119,7 @@ function App() {
 
             <Route path="/listing" element={ <AdminRoute><Listing /></AdminRoute> } />
 
-            <Route path="/dashboard" element={ <AdminRoute><AdminDashboard /></AdminRoute> } />
+            {/* <Route path="/dashboard" element={ <AdminRoute><AdminDashboard /></AdminRoute> } /> */}
             
 
             <Route
@@ -130,7 +130,7 @@ function App() {
                 </AdminRoute>
               }
             >
-              {/* <Route index element={<AdminDashboard />} /> */}
+              <Route index element={<AdminDashboard />} />
               <Route path="/admin/courses" element={<AdminCourse />} />
               {/* <Route path="users" element={<ManageUsers />} />
           <Route path="analytics" element={<Analytics />} />
