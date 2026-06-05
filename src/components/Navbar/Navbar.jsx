@@ -352,6 +352,8 @@ function Navbar() {
               onClick={() => {
                 navigate("/register");
                 setAccountDropdown(false);
+                 setMenuOpen(false);
+              setDropdown(null);
               }}
             >
               Register
@@ -363,6 +365,8 @@ function Navbar() {
               onClick={() => {
                 navigate("/login");
                 setAccountDropdown(false);
+                 setMenuOpen(false);
+              setDropdown(null);
               }}
             >
               Login
@@ -371,7 +375,13 @@ function Navbar() {
         </>
       ) : (
         <li>
-          <button onClick={handleLogout}>
+          <button onClick={
+            () => {
+              handleLogout();
+              setMenuOpen(false);
+              setDropdown(null);
+            }
+          }>
             Logout
           </button>
         </li>

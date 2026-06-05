@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import axios from "axios";
 import API_BASE_URL from '../../config/api';
 
-const API = `${API_BASE_URL}/api/admin`;
+const API = `${API_BASE_URL}/admin`;
 
 const emptyForm = { title: "", description: "", price: "", category: "", thumbnail: "", instructor: "" };
 
