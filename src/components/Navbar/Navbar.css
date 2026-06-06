@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+.navbar {
+  padding-left: 80px;
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -307,44 +311,3 @@ body {
   }
 
 }
-
-/* Desktop Large Screens */
-/* @media (min-width: 1200px) {
-  .nav-links {
-    gap: 22px;
-  }
-
-  .nav-links a,
-  .nav-title {
-    font-size: 15px;
-  }
-
-  .register1 {
-    white-space: nowrap;
-  }
-
-  .account-dropdown {
-    min-width: 180px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .nav-links {
-    gap: 10px;
-  }
-
-  .register1 {
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-
-  .account-dropdown {
-    min-width: 170px;
-    top: 45px;
-  }
-
-  .account-dropdown button {
-    font-size: 14px;
-  }
-} */

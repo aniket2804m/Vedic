@@ -1,10 +1,17 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-// import axios from "axios";
 import API from "../../config/api";
+import "./ManageCourses.css";
 
 const ADMIN_API = "/admin";
 
-const emptyForm = { title: "", description: "", price: "", category: "", thumbnail: "", instructor: "" };
+const emptyForm = {
+  title: "",
+  description: "",
+  price: "",
+  category: "",
+  thumbnail: "",
+  instructor: "",
+};
 
 export default function ManageCourses() {
   const [courses, setCourses] = useState([]);
@@ -15,150 +22,294 @@ export default function ManageCourses() {
   const [search, setSearch] = useState("");
 
   const token = localStorage.getItem("token");
-  const headers = useMemo(() => ({ Authorization: `Bearer ${token}` }), [token]);
 
-  // ✅ Define fetchCourses FIRST
-const fetchCourses = useCallback(async () => {
-  try {
-    const res = await API.get(`${ADMIN_API}/courses`, { headers });
-    setCourses(res.data);
-  } catch (err) { console.error(err); }
-}, [headers]);
+  const headers = useMemo(
+    () => ({
+      Authorization: `Bearer ${token}`,
+    }),
+    [token]
+  );
 
-// ✅ Then use it in useEffect
-useEffect(() => { fetchCourses(); }, [fetchCourses]);
+  const fetchCourses = useCallback(async () => {
+    try {
+      const res = await API.get(`${ADMIN_API}/courses`, { headers });
+      setCourses(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [headers]);
+
+  useEffect(() => {
+    fetchCourses();
+  }, [fetchCourses]);
 
   const handleSubmit = async () => {
-    if (!form.title || !form.price) return alert("Title and Price required!");
+    if (!form.title || !form.price) {
+      return alert("Title and Price required!");
+    }
+
     setLoading(true);
+
     try {
       if (editId) {
-        await API.put(`${ADMIN_API}/courses/${editId}`, form, { headers });
+        await API.put(`${ADMIN_API}/courses/${editId}`, form, {
+          headers,
+        });
       } else {
-        await API.post(`${ADMIN_API}/courses`, form, { headers });
+        await API.post(`${ADMIN_API}/courses`, form, {
+          headers,
+        });
       }
-      setForm(emptyForm); setEditId(null); setShowForm(false);
+
+      setForm(emptyForm);
+      setEditId(null);
+      setShowForm(false);
       fetchCourses();
-    } catch (err) { console.error(err); }
+    } catch (err) {
+      console.error(err);
+    }
+
     setLoading(false);
   };
 
   const handleEdit = (course) => {
-    setForm({ title: course.title, description: course.description, price: course.price, category: course.category, thumbnail: course.thumbnail, instructor: course.instructor });
+    setForm({
+      title: course.title,
+      description: course.description,
+      price: course.price,
+      category: course.category,
+      thumbnail: course.thumbnail,
+      instructor: course.instructor,
+    });
+
     setEditId(course._id);
     setShowForm(true);
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure?")) return;
+
     try {
-      await API.delete(`${ADMIN_API}/courses/${id}`, { headers });
+      await API.delete(`${ADMIN_API}/courses/${id}`, {
+        headers,
+      });
+
       fetchCourses();
-    } catch (err) { console.error(err); }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
-  const filtered = courses.filter(c => c.title?.toLowerCase().includes(search.toLowerCase()));
+  const filtered = courses.filter((course) =>
+    course.title?.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif" }}>
+    <div className="courses-container">
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+      <div className="courses-header">
         <div>
-          <h2 style={{ fontSize: "20px", fontWeight: "700", color: "#0f172a", margin: 0 }}>Manage Courses</h2>
-          <p style={{ color: "#64748b", fontSize: "13px", marginTop: "2px" }}>{courses.length} total courses</p>
+          <h2>📚 Manage Courses</h2>
+          <p>{courses.length} Total Courses</p>
         </div>
-        <button onClick={() => { setShowForm(!showForm); setEditId(null); setForm(emptyForm); }}
-          style={{ padding: "10px 20px", background: "#1d4ed8", color: "#fff", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "600" }}>
-          {showForm ? "✕ Cancel" : "+ Add Course"}
+
+        <button
+          className="add-btn"
+          onClick={() => {
+            setShowForm(!showForm);
+            setEditId(null);
+            setForm(emptyForm);
+          }}
+        >
+          {showForm ? "✖ Cancel" : "+ Add Course"}
         </button>
       </div>
 
       {/* Form */}
       {showForm && (
-        <div style={{ background: "#fff", borderRadius: "14px", padding: "24px", marginBottom: "20px", border: "1px solid #e2e8f0", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-          <h3 style={{ marginBottom: "16px", color: "#0f172a", fontWeight: "700" }}>{editId ? "Edit Course" : "Add New Course"}</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-            {[
-              { key: "title", label: "Course Title", placeholder: "e.g. Full Stack React" },
-              { key: "instructor", label: "Instructor Name", placeholder: "e.g. Rahul Sharma" },
-              { key: "price", label: "Price (₹)", placeholder: "e.g. 999" },
-              { key: "category", label: "Category", placeholder: "e.g. Web Development" },
-              { key: "thumbnail", label: "Thumbnail URL", placeholder: "https://..." },
-            ].map(field => (
-              <div key={field.key}>
-                <label style={{ fontSize: "12px", fontWeight: "600", color: "#374151", display: "block", marginBottom: "6px" }}>{field.label}</label>
-                <input
-                  value={form[field.key]}
-                  onChange={e => setForm({ ...form, [field.key]: e.target.value })}
-                  placeholder={field.placeholder}
-                  style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", boxSizing: "border-box", outline: "none" }}
-                />
-              </div>
-            ))}
-            <div style={{ gridColumn: "1/-1" }}>
-              <label style={{ fontSize: "12px", fontWeight: "600", color: "#374151", display: "block", marginBottom: "6px" }}>Description</label>
+        <div className="course-form-card">
+          <h3>{editId ? "Update Course" : "Create New Course"}</h3>
+
+          <div className="form-grid">
+            <div>
+              <label>Course Title</label>
+              <input
+                value={form.title}
+                placeholder="React Mastery"
+                onChange={(e) =>
+                  setForm({ ...form, title: e.target.value })
+                }
+              />
+            </div>
+
+            <div>
+              <label>Instructor</label>
+              <input
+                value={form.instructor}
+                placeholder="John Doe"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    instructor: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+            <div>
+              <label>Price</label>
+              <input
+                value={form.price}
+                placeholder="999"
+                onChange={(e) =>
+                  setForm({ ...form, price: e.target.value })
+                }
+              />
+            </div>
+
+            <div>
+              <label>Category</label>
+              <input
+                value={form.category}
+                placeholder="Web Development"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    category: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+            <div className="full-width">
+              <label>Thumbnail URL</label>
+              <input
+                value={form.thumbnail}
+                placeholder="https://image-url.com"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    thumbnail: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+            <div className="full-width">
+              <label>Description</label>
               <textarea
+                rows="4"
                 value={form.description}
-                onChange={e => setForm({ ...form, description: e.target.value })}
-                placeholder="Course description..."
-                rows={3}
-                style={{ width: "100%", padding: "10px 12px", border: "1px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", boxSizing: "border-box", resize: "vertical", outline: "none" }}
+                placeholder="Course Description..."
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    description: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
-          <button onClick={handleSubmit} disabled={loading}
-            style={{ marginTop: "16px", padding: "11px 28px", background: loading ? "#94a3b8" : "#1d4ed8", color: "#fff", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "600", fontSize: "14px" }}>
-            {loading ? "Saving..." : editId ? "Update Course" : "Create Course"}
+
+          <button
+            className="submit-btn"
+            disabled={loading}
+            onClick={handleSubmit}
+          >
+            {loading
+              ? "Saving..."
+              : editId
+              ? "Update Course"
+              : "Create Course"}
           </button>
         </div>
       )}
 
       {/* Search */}
-      <div style={{ marginBottom: "16px" }}>
-        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="🔍 Search courses..."
-          style={{ padding: "10px 14px", border: "1px solid #e2e8f0", borderRadius: "8px", width: "280px", fontSize: "14px", outline: "none" }} />
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="🔍 Search Courses..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
 
-      {/* Courses Table */}
-      <div style={{ background: "#fff", borderRadius: "14px", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.06)", border: "1px solid #e2e8f0" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr style={{ background: "#f8fafc", borderBottom: "1px solid #e2e8f0" }}>
-              {["Course", "Category", "Instructor", "Price", "Actions"].map(h => (
-                <th key={h} style={{ padding: "14px 16px", textAlign: "left", fontSize: "12px", fontWeight: "700", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.length === 0 ? (
-              <tr><td colSpan={5} style={{ padding: "40px", textAlign: "center", color: "#94a3b8" }}>No courses found</td></tr>
-            ) : filtered.map(course => (
-              <tr key={course._id} style={{ borderBottom: "1px solid #f1f5f9" }}>
-                <td style={{ padding: "14px 16px" }}>
-                  <div style={{ fontWeight: "600", color: "#0f172a", fontSize: "14px" }}>{course.title}</div>
-                  <div style={{ color: "#94a3b8", fontSize: "12px", marginTop: "2px" }}>{course.description?.slice(0, 50)}...</div>
-                </td>
-                <td style={{ padding: "14px 16px" }}>
-                  <span style={{ background: "#eff6ff", color: "#3b82f6", padding: "3px 10px", borderRadius: "20px", fontSize: "12px", fontWeight: "600" }}>{course.category || "General"}</span>
-                </td>
-                <td style={{ padding: "14px 16px", color: "#374151", fontSize: "14px" }}>{course.instructor || "N/A"}</td>
-                <td style={{ padding: "14px 16px", fontWeight: "700", color: "#059669" }}>₹{course.price}</td>
-                <td style={{ padding: "14px 16px" }}>
-                  <div style={{ display: "flex", gap: "8px" }}>
-                    <button onClick={() => handleEdit(course)}
-                      style={{ padding: "6px 14px", background: "#fef9c3", color: "#92400e", border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: "600", fontSize: "12px" }}>
-                      ✏️ Edit
-                    </button>
-                    <button onClick={() => handleDelete(course._id)}
-                      style={{ padding: "6px 14px", background: "#fee2e2", color: "#991b1b", border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: "600", fontSize: "12px" }}>
-                      🗑️ Delete
-                    </button>
-                  </div>
-                </td>
+      {/* Table */}
+      <div className="table-card">
+        <div className="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Category</th>
+                <th>Instructor</th>
+                <th>Price</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {filtered.length === 0 ? (
+                <tr>
+                  <td colSpan="5" className="empty-row">
+                    No Courses Found
+                  </td>
+                </tr>
+              ) : (
+                filtered.map((course) => (
+                  <tr key={course._id}>
+                    <td>
+                      <div className="course-title">
+                        {course.title}
+                      </div>
+
+                      <div className="course-desc">
+                        {course.description?.slice(0, 60)}...
+                      </div>
+                    </td>
+
+                    <td>
+                      <span className="badge">
+                        {course.category || "General"}
+                      </span>
+                    </td>
+
+                    <td>
+                      {course.instructor || "N/A"}
+                    </td>
+
+                    <td className="price">
+                      ₹{course.price}
+                    </td>
+
+                    <td>
+                      <div className="action-buttons">
+                        <button
+                          className="edit-btn"
+                          onClick={() =>
+                            handleEdit(course)
+                          }
+                        >
+                          Edit
+                        </button>
+
+                        <button
+                          className="delete-btn"
+                          onClick={() =>
+                            handleDelete(course._id)
+                          }
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

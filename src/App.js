@@ -63,6 +63,8 @@ const AdminCourse = lazy(() => import("./pages/admin/AdminCourse"));
 
 const ManageUsers = lazy(() => import("./pages/admin/ManageUsers"));
 
+const Analytics = lazy(() => import("./pages/admin/Analytics"));
+
 function App() {
   return (
     <Router>
@@ -135,6 +137,7 @@ function App() {
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="courses" element={<AdminCourse />} />
               <Route path="users" element={<ManageUsers />} />
+              <Route path="analytics" element={<Analytics />} />
             </Route>
 
             <Route path="/explore" element={<Explore />} />

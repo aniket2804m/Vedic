@@ -7,7 +7,7 @@ const navItems = [
   { path: "/admin/courses", label: "Manage Courses", icon: "📚" },
   { path: "/admin/users", label: "Manage Users", icon: "👥" },
   { path: "/admin/analytics", label: "Analytics", icon: "📊" },
-  { path: "/admin/quiz-report", label: "Quiz Reports", icon: "📝" },
+  // { path: "/admin/quiz-report", label: "Quiz Reports", icon: "📝" },
 ];
 
 export default function AdminSidebar() {
@@ -39,13 +39,16 @@ export default function AdminSidebar() {
       </button>
 
       {/* Overlay for mobile */}
-      {isOpen && <div className="sidebar-overlay" onClick={() => setIsOpen(false)}></div>}
+      {isOpen && (
+        <div className="sidebar-overlay" onClick={() => setIsOpen(false)}></div>
+      )}
 
       {/* Sidebar */}
       <aside className={`admin-sidebar ${isOpen ? "active" : ""}`}>
         {/* Logo */}
         <div className="sidebar-logo">
           <div className="logo-title">🎓 CourseAdmin</div>
+
           <div className="logo-subtitle">Management Panel</div>
         </div>
 
@@ -56,7 +59,9 @@ export default function AdminSidebar() {
               key={item.path}
               to={item.path}
               end={item.path === "/admin"}
-              className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
               onClick={handleNavClick}
             >
               <span className="nav-icon">{item.icon}</span>

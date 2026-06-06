@@ -321,7 +321,7 @@ function Navbar() {
                 setDropdown(null);
               }}
             >
-              Dashboard
+              ✦Dashboard
             </Link>
           </li>
         )}

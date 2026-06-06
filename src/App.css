@@ -2,6 +2,19 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* HEADINGS */
 h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
