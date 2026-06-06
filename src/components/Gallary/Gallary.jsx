@@ -31,16 +31,10 @@ const Gallery = () => {
             onClick={() => setSelectedItem(item)}
           >
             {item.mediaType === "image" ? (
-              <img
-                src={item.mediaUrl}
-                alt="Gallery"
-              />
+              <img src={item.mediaUrl} alt="gallery" loading="lazy" />
             ) : (
               <video muted>
-                <source
-                  src={item.mediaUrl}
-                  type="video/mp4"
-                />
+                <source src={item.mediaUrl} type="video/mp4" />
               </video>
             )}
           </div>
@@ -48,10 +42,7 @@ const Gallery = () => {
       </div>
 
       {selectedItem && (
-        <div
-          className="modal"
-          onClick={() => setSelectedItem(null)}
-        >
+        <div className="modal" onClick={() => setSelectedItem(null)}>
           <span className="close-btn">&times;</span>
 
           {selectedItem.mediaType === "image" ? (
@@ -61,15 +52,8 @@ const Gallery = () => {
               alt="Preview"
             />
           ) : (
-            <video
-              className="modal-content"
-              controls
-              autoPlay
-            >
-              <source
-                src={selectedItem.mediaUrl}
-                type="video/mp4"
-              />
+            <video className="modal-content" controls autoPlay>
+              <source src={selectedItem.mediaUrl} type="video/mp4" />
             </video>
           )}
         </div>
