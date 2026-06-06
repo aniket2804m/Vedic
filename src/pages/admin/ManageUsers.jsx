@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import axios from "axios";
-import API_BASE_URL from "../../config/api";
+// import axios from "axios";
+import API from "../../config/api";
 import "./ManageUsers.css";
 
-const API = `${API_BASE_URL}/admin`;
+const ADMIN_API = "/admin";
 
 export default function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -21,7 +21,7 @@ export default function ManageUsers() {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await axios.get(`${API}/users`, { headers });
+      const res = await API.get(`${ADMIN_API}/users`, { headers });
       setUsers(res.data);
     } catch (err) {
       console.error(err);
@@ -34,8 +34,8 @@ export default function ManageUsers() {
 
   const toggleBlock = async (id, isBlocked) => {
     try {
-      await axios.put(
-        `${API}/users/${id}/block`,
+      await API.put(
+        `${ADMIN_API}/users/${id}/block`,
         { blocked: !isBlocked },
         { headers }
       );

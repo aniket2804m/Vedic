@@ -46,7 +46,7 @@ const Login = ({ setRole }) => {
     }
 
     console.log("Origin:", window.location.origin);
-console.log("API Base URL:", API.defaults.baseURL);
+    console.log("API Base URL:", API.defaults.baseURL);
 
     try {
       setLoading(true);
@@ -66,8 +66,8 @@ console.log("API Base URL:", API.defaults.baseURL);
       // setRole(role);
 
       if (setRole) {
-  setRole(role);
-}
+        setRole(role);
+      }
 
       setMessage({
         success: message || "Login Successful",
@@ -76,26 +76,25 @@ console.log("API Base URL:", API.defaults.baseURL);
 
       // Redirect
       setTimeout(() => {
-        navigate(role === "admin" ? "/admin" : "/dashboard");
+        navigate(role === "admin" ? "/admin/dashboard" : "/");
       }, 1500);
 
       // setTimeout(() => {
       //   navigate("/");
       // }, 1500);
-
     } catch (err) {
-  console.log("FULL ERROR:", err);
-  console.log("ERROR MESSAGE:", err.message);
-  console.log("ERROR CODE:", err.code);
-  console.log("ERROR NAME:", err.name);
-  console.log("RESPONSE:", err.response);
-  console.log("REQUEST:", err.request);
+      console.log("FULL ERROR:", err);
+      console.log("ERROR MESSAGE:", err.message);
+      console.log("ERROR CODE:", err.code);
+      console.log("ERROR NAME:", err.name);
+      console.log("RESPONSE:", err.response);
+      console.log("REQUEST:", err.request);
 
-  setMessage({
-    error: err.response?.data?.message || "Something went wrong",
-    success: "",
-  });
-}
+      setMessage({
+        error: err.response?.data?.message || "Something went wrong",
+        success: "",
+      });
+    }
   };
 
   // Enter Key Support

@@ -1,136 +1,215 @@
-import React, { useState } from "react";
-// import axios from "axios";
-import API from '../../config/api';
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import API from "../../config/api";
+import "./EditListing.css";
 
-const EditListing = ({ item, setListings }) => {
+const EditListing = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-  const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
   const [editData, setEditData] = useState({
-    title: item.title,
-    description: item.description,
-    price: item.price,
-    location: item.location,
-    amenities: item.amenities,
+    title: "",
+    description: "",
+    price: "",
+    location: "",
+    amenities: "",
   });
 
-  // ✅ New states for images
   const [imageFiles, setImageFiles] = useState([]);
-  const [previews, setPreviews] = useState(
-    item.images?.map(img => img.url) || [] // Existing images dikhao
-  );
+  const [previews, setPreviews] = useState([]);
 
-  // ✅ File select hone par
+  useEffect(() => {
+    fetchListing();
+  }, [id]);
+
+  const fetchListing = async () => {
+    try {
+      const res = await API.get(`/listings/${id}`);
+      const listing = res.data.listing || res.data;
+
+      setEditData({
+        title: listing.title || "",
+        description: listing.description || "",
+        price: listing.price || "",
+        location: listing.location || "",
+        amenities: listing.amenities || "",
+      });
+
+      setPreviews(listing.images?.map((img) => img.url) || []);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
+
     setImageFiles(files);
 
-    // Naye previews banao
-    const newPreviews = files.map(file => URL.createObjectURL(file));
-    setPreviews(newPreviews);
+    setPreviews(
+      files.map((file) => URL.createObjectURL(file))
+    );
   };
 
   const handleUpdate = async () => {
     try {
+      setSaving(true);
+
       const token = localStorage.getItem("token");
 
-      // ✅ FormData use karo
       const formData = new FormData();
-      formData.append("title", editData.title);
-      formData.append("description", editData.description);
-      formData.append("price", editData.price);
-      formData.append("location", editData.location);
-      formData.append("amenities", editData.amenities);
 
-      // ✅ Nayi images aayi hain toh append karo
-      imageFiles.forEach(file => {
+      Object.keys(editData).forEach((key) => {
+        formData.append(key, editData[key]);
+      });
+
+      imageFiles.forEach((file) => {
         formData.append("images", file);
       });
 
-      const res = await API.put(
-        `/listings/${item._id}`,
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            // ⚠️ Content-Type mat likho
-          },
-        }
-      );
+      await API.put(`/listings/${id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-      // UI update
-      setListings((prev) =>
-        prev.map((listing) =>
-          listing._id === item._id ? res.data.listing : listing
-        )
-      );
-
-      setIsEditing(false);
+      alert("Listing Updated Successfully");
+      navigate("/explore");
     } catch (err) {
       console.log(err);
+      alert("Failed To Update Listing");
+    } finally {
+      setSaving(false);
     }
   };
 
-  if (!isEditing) {
-    return <button onClick={() => setIsEditing(true)}>Edit</button>;
+  if (loading) {
+    return (
+      <div className="edit-loader">
+        <div className="spinner"></div>
+        <h3>Loading Course...</h3>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <input
-        value={editData.title}
-        onChange={(e) => setEditData({ ...editData, title: e.target.value })}
-        placeholder="Title"
-      />
+    <div className="edit-page">
+      <div className="edit-card">
+        <h1>Edit Course</h1>
+        <p>Update your course details and images</p>
 
-      <input
-        value={editData.description}
-        onChange={(e) => setEditData({ ...editData, description: e.target.value })}
-        placeholder="Description"
-      />
-
-      <input
-        value={editData.price}
-        onChange={(e) => setEditData({ ...editData, price: e.target.value })}
-        placeholder="Price"
-        type="number"
-      />
-
-      <input
-        value={editData.location}
-        onChange={(e) => setEditData({ ...editData, location: e.target.value })}
-        placeholder="Location"
-      />
-
-      <input
-        value={editData.amenities}
-        onChange={(e) => setEditData({ ...editData, amenities: e.target.value })}
-        placeholder="Amenities"
-      />
-
-      {/* ✅ images ka text input hataya, file input lagaya */}
-      <input
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={handleImageChange}
-      />
-
-      {/* ✅ Image Previews */}
-      {previews.length > 0 && (
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '10px' }}>
-          {previews.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`preview-${i}`}
-              style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px' }}
-            />
-          ))}
+        <div className="form-group">
+          <label>Title</label>
+          <input
+            value={editData.title}
+            onChange={(e) =>
+              setEditData({
+                ...editData,
+                title: e.target.value,
+              })
+            }
+          />
         </div>
-      )}
 
-      <button onClick={handleUpdate}>Save</button>
-      <button onClick={() => setIsEditing(false)}>Cancel</button>
+        <div className="form-group">
+          <label>Description</label>
+          <textarea
+            rows="5"
+            value={editData.description}
+            onChange={(e) =>
+              setEditData({
+                ...editData,
+                description: e.target.value,
+              })
+            }
+          />
+        </div>
+
+        <div className="form-grid">
+          <div className="form-group">
+            <label>Price</label>
+            <input
+              type="number"
+              value={editData.price}
+              onChange={(e) =>
+                setEditData({
+                  ...editData,
+                  price: e.target.value,
+                })
+              }
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Category</label>
+            <input
+              value={editData.location}
+              onChange={(e) =>
+                setEditData({
+                  ...editData,
+                  location: e.target.value,
+                })
+              }
+            />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label>Amenities</label>
+          <input
+            value={editData.amenities}
+            onChange={(e) =>
+              setEditData({
+                ...editData,
+                amenities: e.target.value,
+              })
+            }
+          />
+        </div>
+
+        <div className="upload-box">
+          <input
+            type="file"
+            multiple
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+        </div>
+
+        {previews.length > 0 && (
+          <div className="preview-grid">
+            {previews.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt="preview"
+              />
+            ))}
+          </div>
+        )}
+
+        <div className="button-group">
+          <button
+            className="update-btn"
+            onClick={handleUpdate}
+            disabled={saving}
+          >
+            {saving ? "Updating..." : "Update Course"}
+          </button>
+
+          <button
+            className="cancel-btn"
+            onClick={() => navigate("/explore")}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

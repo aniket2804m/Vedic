@@ -114,13 +114,14 @@ function App() {
             <Route path="/login" element={<AuthPage />} />
             <Route path="/register" element={<Register />} />
 
-            {/* <Route path="/listing" element={ <AdminRoute><Listing /></AdminRoute> } />
-            <Route path="/dashboard" element={ <AdminRoute><AdminDashboard /></AdminRoute> } />
-            <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}></Route>
-            <Route path="/admin/courses" element={<AdminRoute><AdminCourse /></AdminRoute>}></Route> */}
-
-            <Route path="/listing" element={ <AdminRoute><Listing /></AdminRoute> } />
-            
+            <Route
+              path="/listing"
+              element={
+                <AdminRoute>
+                  <Listing />
+                </AdminRoute>
+              }
+            />
 
             <Route
               path="/admin"
@@ -131,15 +132,30 @@ function App() {
               }
             >
               <Route index element={<AdminDashboard />} />
-              <Route path="/admin/courses" element={<AdminCourse />} />
-              <Route path="/admin/users" element={<ManageUsers />} />
-              {/* <Route path="analytics" element={<Analytics />} />
-          <Route path="quiz-report" element={<QuizReport />} /> */}
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="courses" element={<AdminCourse />} />
+              <Route path="users" element={<ManageUsers />} />
             </Route>
 
             <Route path="/explore" element={<Explore />} />
-            <Route path="/edit-listing" element={<EditListing />} />
-            <Route path="/delete-listing" element={<DeleteListing />} />
+            
+            <Route
+              path="/edit-listing/:id"
+              element={
+                <AdminRoute>
+                  <EditListing />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/delete-listing/:id"
+              element={
+                <AdminRoute>
+                  <DeleteListing />
+                </AdminRoute>
+              }
+            />
+
             <Route path="/gallery" element={<Gallary />} />
           </Routes>
         </Suspense>

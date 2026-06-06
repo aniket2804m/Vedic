@@ -18,18 +18,17 @@ function Navbar() {
 
   // Logout Function
   const handleLogout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("role");
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
 
-  setMenuOpen(false);
-  setDropdown(null);
-  setAccountDropdown(false);
+    setMenuOpen(false);
+    setDropdown(null);
+    setAccountDropdown(false);
 
-  navigate("/login");
-};
+    navigate("/login");
+  };
 
-
-// Menu
+  // Menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -276,14 +275,6 @@ function Navbar() {
           </div>
         </li>
 
-        {/* <li>
-          <Link to="/payment" onClick={() => {
-            setMenuOpen(false);
-            setDropdown(null);
-          }}>
-            Payment
-          </Link>
-        </li> */}
 
         <li>
           <Link
@@ -321,74 +312,88 @@ function Navbar() {
           </Link>
         </li>
 
-       {role === "admin" && (
-  <li>
-    <Link
-      to="/listing"
-      onClick={() => {
-        setMenuOpen(false);
-        setDropdown(null);
-      }}
-    >
-      Add Course
-    </Link>
-  </li>
-)}
+        {role === "admin" && (
+          <li>
+            <Link
+              to="/admin/dashboard"
+              onClick={() => {
+                setMenuOpen(false);
+                setDropdown(null);
+              }}
+            >
+              Dashboard
+            </Link>
+          </li>
+        )}
+
+        {role === "admin" && (
+          <li>
+            <Link
+              to="/listing"
+              onClick={() => {
+                setMenuOpen(false);
+                setDropdown(null);
+              }}
+            >
+              Add Course
+            </Link>
+          </li>
+        )}
 
         <li style={{ position: "relative" }}>
-  <button
-    className="register1"
-    onClick={() => setAccountDropdown(!accountDropdown)}
-  >
-    Account ▼
-  </button>
-
-  {accountDropdown && (
-    <ul className="account-dropdown">
-      {!token ? (
-        <>
-          <li>
-            <button
-              onClick={() => {
-                navigate("/register");
-                setAccountDropdown(false);
-                 setMenuOpen(false);
-              setDropdown(null);
-              }}
-            >
-              Register
-            </button>
-          </li>
-
-          <li>
-            <button
-              onClick={() => {
-                navigate("/login");
-                setAccountDropdown(false);
-                 setMenuOpen(false);
-              setDropdown(null);
-              }}
-            >
-              Login
-            </button>
-          </li>
-        </>
-      ) : (
-        <li>
-          <button onClick={
-            () => {
-              handleLogout();
-              setMenuOpen(false);
-              setDropdown(null);
-            }
-          }>
-            Logout
+          <button
+            className="register1"
+            onClick={() => setAccountDropdown(!accountDropdown)}
+          >
+            Account ▼
           </button>
+
+          {accountDropdown && (
+            <ul className="account-dropdown">
+              {!token ? (
+                <>
+                  <li>
+                    <button
+                      onClick={() => {
+                        navigate("/register");
+                        setAccountDropdown(false);
+                        setMenuOpen(false);
+                        setDropdown(null);
+                      }}
+                    >
+                      Register
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      onClick={() => {
+                        navigate("/login");
+                        setAccountDropdown(false);
+                        setMenuOpen(false);
+                        setDropdown(null);
+                      }}
+                    >
+                      Login
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setMenuOpen(false);
+                      setDropdown(null);
+                    }}
+                  >
+                    Logout
+                  </button>
+                </li>
+              )}
+            </ul>
+          )}
         </li>
-      )}
-    </ul>
-  )}
-</li>
       </ul>
     </nav>
   );

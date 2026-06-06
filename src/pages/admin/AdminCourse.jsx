@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import axios from "axios";
-import API_BASE_URL from '../../config/api';
+// import axios from "axios";
+import API from "../../config/api";
 
-const API = `${API_BASE_URL}/admin`;
+const ADMIN_API = "/admin";
 
 const emptyForm = { title: "", description: "", price: "", category: "", thumbnail: "", instructor: "" };
 
@@ -20,7 +20,7 @@ export default function ManageCourses() {
   // ✅ Define fetchCourses FIRST
 const fetchCourses = useCallback(async () => {
   try {
-    const res = await axios.get(`${API}/courses`, { headers });
+    const res = await API.get(`${ADMIN_API}/courses`, { headers });
     setCourses(res.data);
   } catch (err) { console.error(err); }
 }, [headers]);
@@ -33,9 +33,9 @@ useEffect(() => { fetchCourses(); }, [fetchCourses]);
     setLoading(true);
     try {
       if (editId) {
-        await axios.put(`${API}/courses/${editId}`, form, { headers });
+        await API.put(`${ADMIN_API}/courses/${editId}`, form, { headers });
       } else {
-        await axios.post(`${API}/courses`, form, { headers });
+        await API.post(`${ADMIN_API}/courses`, form, { headers });
       }
       setForm(emptyForm); setEditId(null); setShowForm(false);
       fetchCourses();
@@ -52,7 +52,7 @@ useEffect(() => { fetchCourses(); }, [fetchCourses]);
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure?")) return;
     try {
-      await axios.delete(`${API}/courses/${id}`, { headers });
+      await API.delete(`${ADMIN_API}/courses/${id}`, { headers });
       fetchCourses();
     } catch (err) { console.error(err); }
   };

@@ -10,7 +10,7 @@ const Listing = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
+  const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [amenities, setAmenities] = useState("");
 
@@ -37,7 +37,7 @@ const Listing = () => {
     if (
       !title ||
       !description ||
-      !date ||
+      !price ||
       !location ||
       !amenities
     ) {
@@ -53,7 +53,7 @@ const Listing = () => {
 
       formData.append("title", title);
       formData.append("description", description);
-      formData.append("date", date);
+      formData.append("price", price);
       formData.append("location", location);
       formData.append("amenities", amenities);
 
@@ -175,19 +175,19 @@ const Listing = () => {
             type: "text",
           },
           {
-            placeholder: "Date",
-            value: date,
-            setValue: setDate,
-            type: "date",
+            placeholder: "Price",
+            value: price,
+            setValue: setPrice,
+            type: "number",
           },
           {
-            placeholder: "Today's Report",
+            placeholder: "Enter Description",
             value: description,
             setValue: setDescription,
             type: "text",
           },
           {
-            placeholder: "Enter Location",
+            placeholder: "Enter Category",
             value: location,
             setValue: setLocation,
             type: "text",

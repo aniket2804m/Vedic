@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import EditListing from "../Explore/EditListing";
-import DeleteListing from "../Explore/DeleteListing";
-import API from '../../config/api';
+import API from "../../config/api";
 
 const ExploreListing = ({ search }) => {
   const role = localStorage.getItem("role");
@@ -13,7 +11,15 @@ const ExploreListing = ({ search }) => {
   const [category, setCategory] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Vedic", "Tarot", "Numerology", "Vastu", "Palmistry", "Kundali"];
+  const categories = [
+    "All",
+    "Vedic",
+    "Tarot",
+    "Numerology",
+    "Vastu",
+    "Palmistry",
+    "Kundali",
+  ];
 
   const fetchListings = useCallback(async () => {
     try {
@@ -30,7 +36,9 @@ const ExploreListing = ({ search }) => {
     }
   }, [search, category]);
 
-  useEffect(() => { fetchListings(); }, [fetchListings]);
+  useEffect(() => {
+    fetchListings();
+  }, [fetchListings]);
 
   const handleReset = () => {
     setCategory("");
@@ -43,17 +51,68 @@ const ExploreListing = ({ search }) => {
   };
 
   const categoryColors = {
-    "Vedic":      { bg: "rgba(251,191,36,.12)", color: "#f59e0b", dot: "#fbbf24" },
-    "Tarot":      { bg: "rgba(167,139,250,.15)", color: "#a78bfa", dot: "#8b5cf6" },
-    "Numerology": { bg: "rgba(52,211,153,.12)", color: "#34d399", dot: "#10b981" },
-    "Vastu":      { bg: "rgba(251,113,133,.12)", color: "#fb7185", dot: "#f43f5e" },
-    "Palmistry":  { bg: "rgba(96,165,250,.12)", color: "#60a5fa", dot: "#3b82f6" },
-    "Kundali":    { bg: "rgba(249,115,22,.12)", color: "#fb923c", dot: "#f97316" },
+    Vedic: { bg: "rgba(251,191,36,.12)", color: "#f59e0b", dot: "#fbbf24" },
+    Tarot: { bg: "rgba(167,139,250,.15)", color: "#a78bfa", dot: "#8b5cf6" },
+    Numerology: {
+      bg: "rgba(52,211,153,.12)",
+      color: "#34d399",
+      dot: "#10b981",
+    },
+    Vastu: { bg: "rgba(251,113,133,.12)", color: "#fb7185", dot: "#f43f5e" },
+    Palmistry: { bg: "rgba(96,165,250,.12)", color: "#60a5fa", dot: "#3b82f6" },
+    Kundali: { bg: "rgba(249,115,22,.12)", color: "#fb923c", dot: "#f97316" },
   };
 
-  const getColor = (cat) => categoryColors[cat] || { bg: "rgba(148,163,184,.12)", color: "#94a3b8", dot: "#64748b" };
+  const getColor = (cat) =>
+    categoryColors[cat] || {
+      bg: "rgba(148,163,184,.12)",
+      color: "#94a3b8",
+      dot: "#64748b",
+    };
 
-  const zodiacSymbols = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+  const zodiacSymbols = [
+    "♈",
+    "♉",
+    "♊",
+    "♋",
+    "♌",
+    "♍",
+    "♎",
+    "♏",
+    "♐",
+    "♑",
+    "♒",
+    "♓",
+  ];
+
+  // Delete Listing
+  const handleDelete = async (id) => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this listing?"
+  );
+
+  if (!confirmDelete) return;
+
+  try {
+    const token = localStorage.getItem("token");
+
+    await API.delete(`/listings/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    // UI update
+    setListings((prev) =>
+      prev.filter((listing) => listing._id !== id)
+    );
+
+    alert("Listing deleted successfully");
+  } catch (err) {
+    console.error(err);
+    alert("Failed to delete listing");
+  }
+};
 
   return (
     <>
@@ -525,12 +584,14 @@ const ExploreListing = ({ search }) => {
           </div>
 
           <h1 className="al-hero-title">
-            Unlock the Secrets of<br />
+            Unlock the Secrets of
+            <br />
             <strong>Cosmic Wisdom</strong>
           </h1>
 
           <p className="al-hero-sub">
-            Explore our curated astrology courses — from Vedic charts to Tarot mastery, guided by expert practitioners.
+            Explore our curated astrology courses — from Vedic charts to Tarot
+            mastery, guided by expert practitioners.
           </p>
 
           <div className="al-hero-stats">
@@ -581,7 +642,9 @@ const ExploreListing = ({ search }) => {
         {/* ── Skeletons ── */}
         {loading && (
           <div className="al-skeleton">
-            {[1, 2, 3].map((i) => <div key={i} className="al-skel-card" />)}
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="al-skel-card" />
+            ))}
           </div>
         )}
 
@@ -596,14 +659,27 @@ const ExploreListing = ({ search }) => {
                   className="al-card"
                   style={{ animationDelay: `${index * 70}ms` }}
                 >
-                  {item.images?.length > 0
-                    ? <img className="al-card-img" src={item.images[0].url} alt={item.title} />
-                    : (
-                      <div className="al-card-no-img">
-                        {zodiacSymbols[index % 12]}
-                      </div>
-                    )
-                  }
+                  {item.images?.length > 0 ? (
+                    <img
+                      src={item.images[0].url}
+                      alt={item.title}
+                      style={{
+                        width: "100%",
+                        height: "220px",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block",
+                        borderTopLeftRadius: "20px",
+                        borderTopRightRadius: "20px",
+                        transition: "transform 0.4s ease",
+                      }}
+                    />
+                  ) : (
+                    <div className="al-card-no-img">
+                      {zodiacSymbols[index % 12]}
+                    </div>
+                  )}
+
                   <div className="al-card-body">
                     <div className="al-card-top">
                       <span
@@ -614,7 +690,13 @@ const ExploreListing = ({ search }) => {
                           borderColor: `${c.dot}30`,
                         }}
                       >
-                        <span className="al-badge-dot" style={{ background: c.dot, boxShadow: `0 0 6px ${c.dot}` }} />
+                        <span
+                          className="al-badge-dot"
+                          style={{
+                            background: c.dot,
+                            boxShadow: `0 0 6px ${c.dot}`,
+                          }}
+                        />
                         {item.amenities || "Astrology"}
                       </span>
                       <span className="al-card-price">₹{item.price}</span>
@@ -631,21 +713,73 @@ const ExploreListing = ({ search }) => {
                     )}
 
                     <div className="al-card-actions">
-                      <button className="al-btn-primary" onClick={() => navigate("/career")}>
+                      <button
+                        className="al-btn-primary"
+                        onClick={() => navigate("/career")}
+                      >
                         Enroll Now
                       </button>
-                      <button className="al-btn-secondary" onClick={() => navigate("/contact")}>
+                      <button
+                        className="al-btn-secondary"
+                        onClick={() => navigate("/contact")}
+                      >
                         Contact
                       </button>
-                      <button className="al-btn-secondary" onClick={() => navigate(`/coursedetail/${item._id}`)}>
+                      <button
+                        className="al-btn-secondary"
+                        onClick={() => navigate("/about")}
+                      >
                         Details
                       </button>
                     </div>
 
                     {role === "admin" && (
-                      <div className="al-admin-row">
-                        <EditListing listingId={item._id} item={item} setListings={setListings} />
-                        <DeleteListing item={item} setListings={setListings} />
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: "10px",
+                          marginTop: "12px",
+                          paddingTop: "12px",
+                          borderTop: "1px solid rgba(255,255,255,0.1)",
+                        }}
+                      >
+                        <button
+                          onClick={() => navigate(`/edit-listing/${item._id}`)}
+                          style={{
+                            flex: 1,
+                            padding: "10px 14px",
+                            border: "none",
+                            borderRadius: "10px",
+                            background:
+                              "linear-gradient(135deg,#2563eb,#3b82f6)",
+                            color: "#fff",
+                            fontWeight: "600",
+                            cursor: "pointer",
+                            transition: "all 0.3s ease",
+                            boxShadow: "0 4px 12px rgba(37,99,235,.3)",
+                          }}
+                        >
+                          ✏️ Edit
+                        </button>
+
+                        <button
+                           onClick={() => handleDelete(item._id)}
+                          style={{
+                            flex: 1,
+                            padding: "10px 14px",
+                            border: "none",
+                            borderRadius: "10px",
+                            background:
+                              "linear-gradient(135deg,#dc2626,#ef4444)",
+                            color: "#fff",
+                            fontWeight: "600",
+                            cursor: "pointer",
+                            transition: "all 0.3s ease",
+                            boxShadow: "0 4px 12px rgba(220,38,38,.3)",
+                          }}
+                        >
+                          🗑️ Delete
+                        </button>
                       </div>
                     )}
                   </div>
@@ -674,8 +808,12 @@ const ExploreListing = ({ search }) => {
         {/* ── Learning Model ── */}
         <div className="al-model">
           <div className="al-model-header">
-            <h2 className="al-model-title">Our <strong>Learning Path</strong></h2>
-            <p className="al-model-sub">Teen phases mein mastery — basics se cosmic clarity tak</p>
+            <h2 className="al-model-title">
+              Our <strong>Learning Path</strong>
+            </h2>
+            <p className="al-model-sub">
+              Teen phases mein mastery — basics se cosmic clarity tak
+            </p>
           </div>
           <div className="al-model-grid">
             {[
@@ -707,7 +845,6 @@ const ExploreListing = ({ search }) => {
             ))}
           </div>
         </div>
-
       </div>
     </>
   );
