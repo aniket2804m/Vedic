@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../../config/api";
 import "./EditListing.css";
@@ -21,30 +21,30 @@ const EditListing = () => {
   const [imageFiles, setImageFiles] = useState([]);
   const [previews, setPreviews] = useState([]);
 
+  const fetchListing = useCallback(async () => {
+  try {
+    const res = await API.get(`/listings/${id}`);
+    const listing = res.data.listing || res.data;
+
+    setEditData({
+      title: listing.title || "",
+      description: listing.description || "",
+      price: listing.price || "",
+      location: listing.location || "",
+      amenities: listing.amenities || "",
+    });
+
+    setPreviews(listing.images?.map((img) => img.url) || []);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    setLoading(false);
+  }
+}, [id]);
+
   useEffect(() => {
-    fetchListing();
-  }, [id]);
-
-  const fetchListing = async () => {
-    try {
-      const res = await API.get(`/listings/${id}`);
-      const listing = res.data.listing || res.data;
-
-      setEditData({
-        title: listing.title || "",
-        description: listing.description || "",
-        price: listing.price || "",
-        location: listing.location || "",
-        amenities: listing.amenities || "",
-      });
-
-      setPreviews(listing.images?.map((img) => img.url) || []);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  fetchListing();
+}, [fetchListing]);
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
