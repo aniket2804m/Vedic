@@ -8,6 +8,7 @@ const navItems = [
   { path: "/admin/users", label: "Manage Users", icon: "👥" },
   { path: "/admin/analytics", label: "Analytics", icon: "📊" },
   // { path: "/admin/quiz-report", label: "Quiz Reports", icon: "📝" },
+  { path: "/admin/gallery", label: "Gallery", icon: "🖼️" }
 ];
 
 export default function AdminSidebar() {
