@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 import "./App.css";
 
@@ -67,8 +68,11 @@ const Analytics = lazy(() => import("./pages/admin/Analytics"));
 
 const AdminGallery = lazy(() => import("./pages/admin/AdminGallery"));
 
+const AdminEnquiry = lazy(() => import("./pages/admin/UserEnquiry"));
+
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       {/* NAVBAR */}
       <Navbar />
@@ -141,6 +145,7 @@ function App() {
               <Route path="users" element={<ManageUsers />} />
               <Route path="analytics" element={<Analytics />} />
               <Route path="gallery" element={<AdminGallery />} />
+              <Route path="enquiries" element={<AdminEnquiry />} />
             </Route>
 
             <Route path="/explore" element={<Explore />} />
@@ -171,6 +176,7 @@ function App() {
 
       <ChatBot />
     </Router>
+    </HelmetProvider>
   );
 }
 

@@ -1,11 +1,19 @@
 // NameNumerology.jsx
 
 import React from "react";
+import SEO from "../../components/SEO";
 import "./NameNumerology.css";
 
 const NameNumerology = () => {
   return (
     <div className="nameNumerology">
+
+      <SEO
+        title="Name Numerology Calculator"
+        description="Calculate your Name Number and discover hidden insights about your personality and life path."
+        keywords="name numerology, name number calculator, numerology"
+        url="https://yourdomain.com/name-numerology"
+      />
 
       {/* HERO SECTION */}
 

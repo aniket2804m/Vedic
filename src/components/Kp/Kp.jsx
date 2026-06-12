@@ -1,5 +1,6 @@
 import React from 'react'
 import { lazy, Suspense } from "react";
+import SEO from "../../components/SEO";
 import { useNavigate } from "react-router-dom";
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
 import img from "../../assets/vedic.png";
@@ -22,6 +23,13 @@ const Kp = () => {
 
   return (
     <div className='home-container'>
+
+      <SEO
+        title="Kp Astrology Course"
+        description="Professional Kp Astrology Training Program"
+        keywords="kp astrology course, astrology training"
+        url="https://yourdomain.com/kp-astrology"
+      />
       
        <section className="home">
               {/* LEFT */}

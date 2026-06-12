@@ -1,5 +1,6 @@
 import React from "react";
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 
 import "./Home.css";
@@ -23,6 +24,26 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
+
+    <>
+
+     <Helmet>
+        <title>DRSS Digital | Astrology & Numerology Courses</title>
+
+        <meta
+          name="description"
+          content="Learn Vedic Astrology, KP Astrology, Numerology and Lal Kitab from expert trainers."
+        />
+
+        <meta
+          name="keywords"
+          content="vedic astrology,kp astrology,numerology,lal kitab courses"
+        />
+
+        <link rel="canonical" href="https://yourdomain.com/" />
+      </Helmet>
+
+
     <div className="home-container">
       <section className="home">
         {/* LEFT */}
@@ -115,6 +136,8 @@ const Home = () => {
 
       
     </div>
+
+    </>
   );
 };
 

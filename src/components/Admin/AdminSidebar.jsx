@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./AdminSidebar.css";
 
@@ -8,12 +8,21 @@ const navItems = [
   { path: "/admin/users", label: "Manage Users", icon: "👥" },
   { path: "/admin/analytics", label: "Analytics", icon: "📊" },
   // { path: "/admin/quiz-report", label: "Quiz Reports", icon: "📝" },
-  { path: "/admin/gallery", label: "Gallery", icon: "🖼️" }
+  { path: "/admin/gallery", label: "Gallery", icon: "🖼️" },
+  { path: "/admin/enquiries", label: "Enquiries", icon: "✉️" },
 ];
 
 export default function AdminSidebar() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  const [leadCount, setLeadCount] = useState(0);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/admin/all-enquiries")
+      .then((res) => res.json())
+      .then((data) => setLeadCount(data.length));
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -51,6 +60,11 @@ export default function AdminSidebar() {
           <div className="logo-title">🎓 CourseAdmin</div>
 
           <div className="logo-subtitle">Management Panel</div>
+
+          <div className="notification">
+            🔔
+            <span>{leadCount}</span>
+          </div>
         </div>
 
         {/* Nav Links */}

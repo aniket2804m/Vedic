@@ -25,7 +25,7 @@ function Navbar() {
     setDropdown(null);
     setAccountDropdown(false);
 
-    navigate("/login");
+    navigate("/");
   };
 
   // Menu

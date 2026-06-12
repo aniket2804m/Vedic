@@ -1,5 +1,6 @@
 import React from 'react'
 import { lazy, Suspense } from "react";
+import SEO from "../../components/SEO";
 import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
 import img from "../../assets/vedic.png";
 import "./LalKitab.css";
@@ -18,6 +19,13 @@ const FAQ = lazy(() => import("../../pages/Faq/AstroFaq"));
 const LalKitab = () => {
   return (
     <div className='home-container'>
+
+      <SEO
+        title="Lal Kitab Astrology Course"
+        description="Professional Lal Kitab Astrology Training Program"
+        keywords="lal kitab astrology course, astrology training"
+        url="https://yourdomain.com/lal-kitab-astrology"
+      />
       
        <section className="home">
               {/* LEFT */}
