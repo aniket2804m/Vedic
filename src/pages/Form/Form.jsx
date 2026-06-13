@@ -23,11 +23,14 @@ const Form = () => {
         <img src={img} alt="vedic" />
       </div>
 
+ <div className="right-content">
      <ErrorBoundary>
         <Suspense fallback={<div className="loader">Loading...</div>}>
         <Form />
          </Suspense>
       </ErrorBoundary>
+
+      </div>
        
     </div>
   );

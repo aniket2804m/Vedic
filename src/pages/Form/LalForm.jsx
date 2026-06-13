@@ -49,11 +49,13 @@ const LalForm = () => {
       </div>
 
       {/* RIGHT SIDE */}
-      <ErrorBoundary>
-        <Suspense fallback={<div className="loader">Loading...</div>}>
-        <Form />
-         </Suspense>
-      </ErrorBoundary>
+      <div className="right-content">
+        <ErrorBoundary>
+          <Suspense fallback={<div className="loader">Loading...</div>}>
+            <Form />
+          </Suspense>
+        </ErrorBoundary>
+      </div>
     </div>
   );
 };

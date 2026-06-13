@@ -48,12 +48,14 @@ const AstroForm = () => {
       </div>
 
       {/* RIGHT SIDE */}
-
+     <div className="right-content">
       <ErrorBoundary>
         <Suspense fallback={<div className="loader">Loading...</div>}>
         <Form />
          </Suspense>
       </ErrorBoundary>
+
+      </div>
 
     </div>
   );
