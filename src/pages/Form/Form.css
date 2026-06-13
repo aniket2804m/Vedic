@@ -161,9 +161,11 @@ form select {
   }
 
   .form-box {
-    max-width: 100%;
-    margin: 40px;
-  }
+  width: 100%;
+  max-width: 420px;
+  margin: 2px;
+  padding: 15px;
+}
 
   .right-content {
     padding: 10px;
