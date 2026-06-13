@@ -28,7 +28,7 @@ const Home = () => {
     <>
 
      <Helmet>
-        <title>DRSS Digital | Astrology & Numerology Courses</title>
+        <title>Jiivastro | Astrology & Numerology Courses</title>
 
         <meta
           name="description"

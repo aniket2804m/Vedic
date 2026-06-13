@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./AdminSidebar.css";
+import API from "../../config/api";
+
+const ADMIN_API = "/admin";
 
 const navItems = [
   { path: "/admin", label: "Dashboard", icon: "⊞" },
@@ -19,8 +22,8 @@ export default function AdminSidebar() {
   const [leadCount, setLeadCount] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/admin/all-enquiries")
-      .then((res) => res.json())
+    API.get(ADMIN_API + "/enquiries")
+      .then((res) => res.data)
       .then((data) => setLeadCount(data.length));
   }, []);
 

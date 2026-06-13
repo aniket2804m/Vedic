@@ -70,6 +70,8 @@ const AdminGallery = lazy(() => import("./pages/admin/AdminGallery"));
 
 const AdminEnquiry = lazy(() => import("./pages/admin/UserEnquiry"));
 
+const ThankYou = lazy(() => import("./pages/Thank/ThankYou"));
+
 function App() {
   return (
     <HelmetProvider>
@@ -168,6 +170,7 @@ function App() {
             />
 
             <Route path="/gallery" element={<Gallary />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </Suspense>
       </main>
